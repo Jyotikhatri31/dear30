@@ -1,24 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import NavigationUser from "./Auth/NavigationUser/NavigationUser";
+import Login from "./Auth/Login/Login";
+import OTP from "./Auth/OTP/OTP";
+import ResetPassword from "./Auth/ResetPassword/ResetPassword";
+import ChangePassword from "./Auth/ChangePassword/ChangePassword";
+import SignUp from "./Auth/SignUp/SignUp";
+import Home from "./Home/Home";
+import Navbar from "./Navbar/Navbar";
+import Footer from "./Footer/Footer";
+import PersonalInfo from "./Profile/PersonalInfo/PersonalInfo";
+import MyOrders from "./Profile/MyOrders/MyOrders";
+import Products from "./Products/Products";
+import ProductDescription from "./ProductDescription/ProductDescription";
+import Cart from "./Cart/Cart";
+import Card from "./Card/Card";
+import PaymentMessage from "./PaymentMessage/PaymentMessage";
+
+function AppContent() {
+  const location = useLocation();
+  const noFooterPath = ["/login", "/signup", "/otp", "/resetpassword", "/changepassword"];
+  const noNavbarPath = ["/login", "/signup", "/otp", "/resetpassword", "/changepassword"];
+
+  return (
+    <div className="App">
+      {!noNavbarPath.includes(location.pathname) && <Navbar />}
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/resetpassword" element={<ResetPassword />} />
+        <Route path="/otp" element={<OTP />} />
+        <Route path="/changepassword" element={<ChangePassword />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/personalinfo" element={<PersonalInfo />} />
+        <Route path="/myorders" element={<MyOrders />} />
+        <Route path="/navigationuser" element={<NavigationUser />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/productdescription" element={<ProductDescription />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/card" element={<Card />} />
+        <Route path="/paymentmessage" element={<PaymentMessage />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
+      {!noFooterPath.includes(location.pathname) && <Footer />}
+    </div>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 
