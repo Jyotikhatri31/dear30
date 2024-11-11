@@ -27,7 +27,7 @@ body,
 button,
 input,
 textarea {
-  font-family: var(--body-font);
+  font-family: var(--body-font)!important;
   font-size: var(--normal-font-size);
 }
 

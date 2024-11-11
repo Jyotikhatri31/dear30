@@ -50,7 +50,7 @@ function Footer() {
           {/* Subscribe Section */}
           <Grid item xs={12} sm={6} md={4}>
             <Box sx={{ backgroundColor: '#5FEF45', p: 2, borderRadius: '5px' }}>
-              <Typography variant="h5" color="textPrimary" sx={{ mb: 1, fontWeight: 'bold', whiteSpace: 'nowrap' }}>SUBSCRIBE TO GET UPDATED</Typography>
+              <Typography variant="h5" color="textPrimary" sx={{ mb: 1, fontWeight: 'bold' }}>SUBSCRIBE TO GET UPDATED</Typography>
               <Typography variant="body2" color="textPrimary" sx={{ mb: 2, fontSize: '1rem' }}>
                 Lorem ipsum dolor sit amet consectetur. Mi nibh venenatis in suscipit turpis.
               </Typography>

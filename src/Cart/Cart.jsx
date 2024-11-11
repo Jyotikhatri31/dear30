@@ -6,6 +6,8 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import img1 from "../Images/eCart.webp";
 import img2 from "../Images/home-2.png";
+import {Link} from "react-router-dom";
+
 function Cart() {
 
   const [cartItems, setCartItems] = useState([
@@ -111,7 +113,9 @@ function Cart() {
 
           <Box display="flex" justifyContent="flex-end" alignItems="center" sx={{ my: 3 }}>
             <Typography variant="h6" sx={{ color: "#fff", mr:2 }}>Total: ${calculateTotal()}</Typography>
-            <Button variant="contained" color="success" sx={{ paddingX: 5 }}>Checkout</Button>
+            <Link to="/checkout">
+              <Button variant="contained" color="success" sx={{ paddingX: 5 }}>Checkout</Button>
+            </Link>
           </Box>
         </Container>
       <Box>

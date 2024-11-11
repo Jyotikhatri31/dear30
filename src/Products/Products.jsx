@@ -61,7 +61,7 @@ function Products() {
                 <span style={{ marginRight: "10px" }}><GpsFixedIcon sx={{ fontSize: '2.5rem'}}/></span> Our Popular Products
             </Typography>
 
-            <Link to="/productdescription">
+            <Link to="/productdescription" className="link-c">
             <Box sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}>
               {products.slice(0, visibleProd).map((product, index) => (
                 <Box key={index} sx={{ width: { xs: "100%", sm: "48%", md: "30%" }, padding: "10px 10px 20px 10px", textAlign: "center" }}>
@@ -69,7 +69,7 @@ function Products() {
                   <Box display="flex" justifyContent="center" sx={{ color: "#FFDD44", mb: 1 }}>
                     {[...Array(5)].map((_, i) => ( i < 4 ? <StarIcon key={i} /> : <StarBorderIcon key={i} />))}
                   </Box>
-                  <Typography variant="h6" sx={{ color: "white", fontWeight: "bold" }}>{product.title}</Typography>
+                  <Typography variant="h6" sx={{ color: "white", fontWeight: "bold", borderBottom: '1px solid #000' }}>{product.title}</Typography>
                   <Typography variant="body1" sx={{ color: "white" }}>Regular price ${product.price}</Typography>
                 </Box>
               ))}
@@ -95,6 +95,7 @@ function Products() {
                 <span style={{ marginRight: "10px" }}><GpsFixedIcon sx={{ fontSize: '2.5rem'}}/></span> Category 2
             </Typography>
 
+            <Link to="/productdescription" className="link-c">
             <Box sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}>
               {category.slice(0, visibleCate).map((categ, index) => (
                 <Box key={index} sx={{ width: { xs: "100%", sm: "48%", md: "30%" }, padding: "10px 10px 20px 10px", textAlign: "center" }}>
@@ -107,6 +108,7 @@ function Products() {
                 </Box>
               ))}
             </Box>
+            </Link>
 
             {visibleCate < category.length && (
               <Box sx={{display: 'flex', justifyContent: 'center', mt: 3}}>

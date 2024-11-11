@@ -124,8 +124,8 @@ function ProductDescription() {
               </Box>
 
               <Box sx={{display: 'flex', gap: '2', mt: 3}}>
-                <Button variant='contained' color='success' sx={{ flex: 1, mr: 2, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold'}}>Buy</Button>
-                <Link to="/cart"><Button variant='outlined' color='success' sx={{ flex: 1, ml: 2, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold' }}>Add to Cart</Button></Link>
+                <Link to="/checkout"><Button variant='contained' color='success' sx={{ flex: 1, mr: 2, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: 16}}>Buy</Button></Link>
+                <Link to="/cart"><Button variant='outlined' color='success' sx={{ flex: 1, ml: 2, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: 10 }}>Add to Cart</Button></Link>
               </Box>
             </Box>
           </Box>
@@ -155,7 +155,7 @@ function ProductDescription() {
 
             <Slider {...settings} className="customer-reviews-slider">
                 {customers.map((customer, index) => (
-                <Box key={index} sx={{ padding: "30px", textAlign: "center", border: '2px solid #FFFFFF', height: '450px', width: '400px', borderRadius: '10px', background: 'linear-gradient(135deg, #1c1c1c 0%, #333 100%)', mx: '2' }}>
+                <Box key={index} sx={{ padding: "30px", textAlign: "center", border: '2px solid #FFFFFF',  minHeight: '450px',height: 'auto', width: '400px', borderRadius: '10px', background: 'linear-gradient(135deg, #1c1c1c 0%, #333 100%)', mx: '2' }}>
                     <Typography variant="h6" sx={{ color: "white" }}>
                       {customer.description}
                     </Typography>

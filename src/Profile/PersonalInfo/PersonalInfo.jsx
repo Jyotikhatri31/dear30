@@ -91,6 +91,11 @@ function PersonalInfo() {
               <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3 }}>
                 <Button variant="contained" sx={{ backgroundColor: '#5FEF45', color: '#fff', px: 10, fontSize: '1.2rem', textTransform: 'initial', fontWeight: 'bold' }}>Update</Button>
               </Box>
+              {/* <Box sx={{ display: 'flex',justifyContent: 'center', mt: 3, background: 'linear-gradient(90deg, #78FF00 0%, #fff 100%)', px: 10}}>
+              <Button variant="contained" sx={{background: 'linear-gradient(90deg, #599D21 0%, #179B7E 100%)', color: '#fff', fontWeight: 'bold', fontSize: '1.2rem', textTransform: 'intial', px: 10}}>
+                Log In
+              </Button>
+            </Box> */}
 
               {/* Change Password Section */}
               <Box sx={{ mt: 4 }}>

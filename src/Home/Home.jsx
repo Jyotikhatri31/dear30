@@ -15,6 +15,7 @@ import img3 from "../Images/home-3.png";
 import img4 from "../Images/home-4.png";
 import img5 from "../Images/home-5.png";
 import GpsFixedIcon from '@mui/icons-material/GpsFixed';
+import { Link } from "react-router-dom";
 
 const products = [
     {
@@ -103,9 +104,11 @@ function Home() {
             Discover premium <span style={{fontWeight: 'bolder'}}>hunting resources</span> and <span style={{fontWeight: 'bolder'}}>top-notch gear</span> effortlessly.
             Your next adventure is just a few clicks away!
           </Typography>
-          <Button variant="contained"  sx={{ margin: '20px 20px 0 0', color: '#000', backgroundColor: '#fff', padding: '8px 40px', fontSize: '1.6rem', fontWeight: 'bold', borderRadius: '10px', textTransform: 'initial' }}>
-            Book Now!
-          </Button>
+          <Link to="/products">
+            <Button variant="contained"  sx={{ margin: '20px 20px 0 0', color: '#000', backgroundColor: '#fff', padding: '8px 40px', fontSize: '1.6rem', fontWeight: 'bold', borderRadius: '10px', textTransform: 'initial' }}>
+              Book Now!
+            </Button>
+          </Link>
           <Button variant="outlined" color="secondary" sx={{ margin: '20px 20px 0 0', color: '#fff', backgroundColor: 'none', border: 'none', fontSize: '1.6rem',  fontWeight: 'bold', textTransform: 'initial'}}>
             Dealers Inquiry <KeyboardArrowRightOutlinedIcon sx={{fontSize: '2.5rem'}}/>
           </Button>
@@ -171,7 +174,7 @@ function Home() {
 
             <Slider {...settings} className="customer-reviews-slider">
                 {customers.map((customer, index) => (
-                <Box key={index} sx={{ padding: "30px", textAlign: "center", border: '2px solid #FFFFFF', height: '450px', width: '400px', borderRadius: '10px', background: 'linear-gradient(135deg, #1c1c1c 0%, #333 100%)', mx: '2' }}>
+                <Box key={index} sx={{ padding: "30px", textAlign: "center", border: '2px solid #FFFFFF', minHeight: '450px',height: 'auto', width: '400px', borderRadius: '10px', background: 'linear-gradient(135deg, #1c1c1c 0%, #333 100%)', mx: '2' }}>
                     <Typography variant="h6" sx={{ color: "white" }}>
                       {customer.description}
                     </Typography>
@@ -206,7 +209,7 @@ function Home() {
                 {blogs.map((blog, index) => (
                 <Box key={index} sx={{ padding: "10px", textAlign: "left" }}>
                     <Box component="img" src={blog.img} alt={blog.title} sx={{ height: "200px", width: "100%", objectFit: "cover", borderRadius: "10px", marginBottom: "10px",}}/>
-                    <Typography variant="h6" sx={{ color: "#F3B2D5", backgroundColor: '#381E2C', height: '40px', width: '80px', borderRadius: '5px', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0'}}>News</Typography>
+                    <Typography variant="h6" sx={{ color: "#F3B2D5", backgroundColor: '#381E2C', height: '40px', width: '100%', borderRadius: '5px', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0'}}>News</Typography>
                     <Typography variant="h5" sx={{ color: "white", fontWeight: '600', margin: '20px 0' }}>Tagline</Typography>
                     <Typography variant="h6" sx={{ color: "white", fontWeight: "500" }}>
                         {blog.description}
