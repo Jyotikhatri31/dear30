@@ -127,7 +127,7 @@ body {
 
 
 /*------------- Products-description --------------*/
-.prod-header, .cart-header{
+.prod-header, .cart-header, .service-header, .dealers-header{
   height: 30vh;
   background-size: cover;
   background-position: center;

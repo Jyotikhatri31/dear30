@@ -21,8 +21,8 @@ function Navbar() {
             </Link>
             <Link to="/"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Home</Button></Link>
             <Link to="./products"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Products</Button></Link>
-            <Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Services</Button>
-            <Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Dealers</Button>
+            <Link to="./service"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Services</Button></Link>
+            <Link to="./dealers"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Dealers</Button></Link>
             <Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>About Us</Button>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>

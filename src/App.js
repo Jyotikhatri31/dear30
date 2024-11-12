@@ -17,6 +17,9 @@ import Cart from "./Cart/Cart";
 import Checkout from "./Checkout/Checkout";
 import PaymentMessage from "./PaymentMessage/PaymentMessage";
 import OrderTracking from "./OrderTracking/OrderTracking";
+import Service from "./Service/Service";
+import Dealers from "./Dealers/Dealers";
+import EnquiryForm from "./EnquiryForm/EnquiryForm";
 
 function AppContent() {
   const location = useLocation();
@@ -41,6 +44,9 @@ function AppContent() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/paymentmessage" element={<PaymentMessage />} />
         <Route path="/ordertracking" element={<OrderTracking />} />
+        <Route path="/service" element={<Service/>} />
+        <Route path="/dealers" element={<Dealers/>} />
+        <Route path="/enquiryform" element={<EnquiryForm/>} />
         <Route path="/" element={<Home />} />
       </Routes>
       {!noFooterPath.includes(location.pathname) && <Footer />}
