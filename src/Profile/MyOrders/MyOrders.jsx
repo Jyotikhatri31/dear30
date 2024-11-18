@@ -44,7 +44,7 @@ function MyOrders() {
         
         {/* Profile Title */}
         <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
-            <Typography variant="h3" sx={{ color: '#fff', mb: 3 }}>My Profile</Typography>
+          <Typography variant="h3" sx={{ color: '#fff', mb: 3 }}>My Profile</Typography>
           <Box sx={{ display: 'flex', alignItems: 'center', border: '2px solid #00FF00', borderRadius: '10px', padding: '0px 10px', backgroundColor: '#000', width: '100%', maxWidth: '450px', height: '55px', color: '#fff'}}>
             <InputBase placeholder="Search any products" sx={{ color: '#FFFFFF', flex: 1, paddingLeft: '8px', fontSize: '1.2rem', color: '#fff'}}/>
             <IconButton type="submit" sx={{ padding: '10px', color: '#FFFFFF' }}>

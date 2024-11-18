@@ -48,7 +48,7 @@ function Checkout() {
             <TextField variant="filled" placeholder="CVC" sx={{ backgroundColor: '#e0ffe6', borderRadius: 1, fontSize: '1.5rem' }} helperText="3 or 4 digits usually found on the signature strip" />
           </Box>
         </Box>
-        {/* Submit Button */}
+        
         <Link to="/paymentmessage">
         <Box sx={{ display: 'inline-block',p: '2px', borderRadius: 2, background: 'linear-gradient(90deg, #78FF00 0%, #fff 100%)', mt: 3}}>
           <Button variant="contained" sx={{background: 'linear-gradient(90deg, #599D21 0%, #179B7E 100%)', color: '#fff', fontWeight: 'bold', fontSize: '1.3rem', textTransform: 'none', borderRadius: 2, px: 10}}>

@@ -23,7 +23,7 @@ function Navbar() {
             <Link to="./products"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Products</Button></Link>
             <Link to="./service"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Services</Button></Link>
             <Link to="./dealers"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Dealers</Button></Link>
-            <Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>About Us</Button>
+            <Link to="./aboutus"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>About Us</Button></Link>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Link to="./cart">
@@ -37,9 +37,6 @@ function Navbar() {
             </IconButton></Link>
 
             <Link to="/navigationuser">
-            {/* <Button variant="contained" color="success" sx={{ marginLeft: 2, textTransform: 'initial', fontSize: '1.1rem' }}>
-              Log In
-            </Button> */}
             <Box sx={{ display: 'inline-block',p: '2px', borderRadius: 2, background: 'linear-gradient(90deg, #78FF00 0%, #fff 100%)'}}>
               <Button variant="contained" sx={{background: 'linear-gradient(90deg, #599D21 0%, #179B7E 100%)', color: '#fff', fontWeight: 'bold', fontSize: '1.2rem', textTransform: 'none', borderRadius: 2, px: 3}}>
                 Log In

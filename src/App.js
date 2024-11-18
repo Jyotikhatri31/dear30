@@ -20,6 +20,10 @@ import OrderTracking from "./OrderTracking/OrderTracking";
 import Service from "./Service/Service";
 import Dealers from "./Dealers/Dealers";
 import EnquiryForm from "./EnquiryForm/EnquiryForm";
+import Approval from "./Approval/Approval";
+import AboutUs from "./AboutUs/AboutUs";
+import FAQ from "./FAQ/FAQ";
+import ContactUs from "./ContactUs/ContactUs";
 
 function AppContent() {
   const location = useLocation();
@@ -47,6 +51,10 @@ function AppContent() {
         <Route path="/service" element={<Service/>} />
         <Route path="/dealers" element={<Dealers/>} />
         <Route path="/enquiryform" element={<EnquiryForm/>} />
+        <Route path="/approval" element={<Approval/>} />
+        <Route path="/aboutus" element={<AboutUs/>} />
+        <Route path="/faq" element={<FAQ/>} />
+        <Route path="/contactus" element={<ContactUs/>} />
         <Route path="/" element={<Home />} />
       </Routes>
       {!noFooterPath.includes(location.pathname) && <Footer />}

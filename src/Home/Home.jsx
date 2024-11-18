@@ -43,13 +43,13 @@ const customers = [
         title: "Freelance Designer",
     },
     {
-        description:"“I've been using this web hosting service for a few months now and overall it's been fine. The uptime has been good and I haven't had any major issues. The pricing is also reasonable. Nothing particularly stands out as exceptional",
+        description:"“I've been using this web hosting service for over a year and I'm really impressed with the uptime and support. The website has never gone down and the customer service is always quick to help with any issues I have. Highly recommend!”",
         img: img4,
         name: "Tom Williams",
         title: "Software Developer",
     },
     {
-        description:"I've been using this web hosting service for a few months and it's been nothing but problems. My website has gone down multiple times and the customer service has been unresponsive. I would not recommend this company.",
+        description:"“I've been using this web hosting service for over a year and I'm really impressed with the uptime and support. The website has never gone down and the customer service is always quick to help with any issues I have. Highly recommend!”",
         img: img4,
         name: "Michael Brown",
         title: "Online Entrepreneur",
@@ -97,7 +97,7 @@ function Home() {
      <Box className="home-sec">
       <Container maxWidth={false} className='container'>
         <Box sx={{ position: "relative", zIndex: 1 }}>
-          <Typography variant="h2" gutterBottom sx={{fontSize: '5rem', fontWeight: 'bold'}}>
+          <Typography variant="h2" gutterBottom sx={{fontSize: '4rem', fontWeight: 'bold'}}>
             Explore, Book, Conquer
           </Typography>
           <Typography variant="h5" gutterBottom>
@@ -163,7 +163,7 @@ function Home() {
         </Container>
      </Box>
      {/* Third-Sec */}
-     <Box className="third-sec" />
+     {/* <Box className="third-sec" /> */}
      {/* Customer-Sec */}
      <Box className="customer-Sec section" sx={{backgroundColor: "#000"}}>
         <Container maxWidth={false} className='container'>
@@ -233,7 +233,7 @@ function Home() {
 const NextArrow = (props) => {
     const { onClick } = props;
     return (
-      <Box onClick={onClick} sx={{ position: "absolute", top: "50%", right: "10px"}} className="arrows">
+      <Box onClick={onClick} sx={{ position: "absolute", top: "50%", right: "22px"}} className="arrows">
         <KeyboardArrowRightOutlinedIcon sx={{fontSize: "3rem"}}/>
       </Box>
     );
@@ -243,7 +243,7 @@ const NextArrow = (props) => {
 const PrevArrow = (props) => {
     const { onClick } = props;
     return (
-      <Box onClick={onClick} sx={{ position: "absolute", top: "50%", left: "10px",}} className="arrows">
+      <Box onClick={onClick} sx={{ position: "absolute", top: "50%", left: "22px",}} className="arrows">
         <KeyboardArrowRightOutlinedIcon sx={{ transform: "rotate(180deg)", fontSize: "3rem" }} />
       </Box>
     );
