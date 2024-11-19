@@ -19,7 +19,7 @@ function Navbar() {
               Logo
             </Button>
             </Link>
-            <Link to="/"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Home</Button></Link>
+            <Link to="/"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Homes</Button></Link>
             <Link to="./products"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Products</Button></Link>
             <Link to="./service"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Services</Button></Link>
             <Link to="./dealers"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Dealers</Button></Link>
