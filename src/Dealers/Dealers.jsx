@@ -38,7 +38,7 @@ function Dealers() {
             <Typography variant='body6'>Lorem ipsum dolor sit amet consectetur. Mi nibh venenatis in suscipit turpis, Lorem ipsum dolor sit amet consectetur. Mi nibh venenatis in suscipit turpis.</Typography>
           </Box>
           <Box sx={{width: '20%'}}>
-            <Link to="/checkout"><Button variant='contained' sx={{ flex: 1, mr: 2, textTransform: 'initial', fontSize: '1.2rem', fontWeight: 'bold', color: '#5FEF45', backgroundColor: '#000', py: 2}}>Enquiry Form >></Button></Link>
+            <Link to="/enquiryform"><Button variant='contained' sx={{ flex: 1, mr: 2, textTransform: 'initial', fontSize: '1.2rem', fontWeight: 'bold', color: '#5FEF45', backgroundColor: '#000', py: 2}}>Enquiry Form >></Button></Link>
           </Box>
         </Container>
        </Box>
@@ -68,8 +68,8 @@ function Dealers() {
           <Typography variant='h3' sx={{color: '#fff', fontWeight: 'bold'}}>Ready to get started?</Typography>
           <Typography variant='h4' sx={{my: 2}}>Talk to us today</Typography>
           <Box sx={{display: 'flex'}}>
-            <Link to="/checkout"><Button variant='contained' sx={{ flex: 1, mr: 2, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: 16, color: '#57CA61', backgroundColor: '#fff'}}>Contact Us</Button></Link>
-            <Link to="/cart"><Button variant='outlined' color='success' sx={{ flex: 1, ml: 2, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: 10, color: '#fff', border: '2px solid #fff' }}>Submit Inquiry</Button></Link>
+            <Link to="/contactus"><Button variant='contained' sx={{ flex: 1, mr: 2, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: 16, color: '#57CA61', backgroundColor: '#fff'}}>Contact Us</Button></Link>
+            <Link to="/enquiryform"><Button variant='outlined' color='success' sx={{ flex: 1, ml: 2, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: 10, color: '#fff', border: '2px solid #fff' }}>Submit Inquiry</Button></Link>
           </Box>
         </Container>
        </Box>

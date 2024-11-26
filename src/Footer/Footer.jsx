@@ -14,7 +14,7 @@ function Footer() {
               <Box sx={{ backgroundColor: '#5FEF45', width: '150px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', mb: 2 }}>
                 <Typography variant="h5" color="textPrimary">Logo</Typography>
               </Box>
-              <Typography variant="body2" sx={{ mb: 2, color: '#fff', fontSize: '1rem', width: '320px' }}>
+              <Typography variant="body2" sx={{ mb: 2, color: '#fff', fontSize: '1rem', width: {xs: '100%', md: '350px'}, fontFamily: '"Poppins", sans-serif' }}>
                 Lorem ipsum dolor sit amet consectetur. Mi nibh venenatis in suscipit turpis enim cursus vulputate amet. Lobortis mi platea aliquam senectus tempus mauris neque.
               </Typography>
               <Box sx={{ display: 'flex', gap: 1 }}>
@@ -29,10 +29,10 @@ function Footer() {
           <Grid item xs={12} sm={6} md={2}>
             <Typography variant="h5" sx={{ color: '#5FEF45', mb: 2, fontWeight: 'bold' }}>Website Links</Typography>
             <Box>
-              <Link href="#" color="inherit" underline="none" sx={{ display: 'block', mb: 1 }}>Home</Link>
-              <Link href="#" color="inherit" underline="none" sx={{ display: 'block', mb: 1 }}>About</Link>
-              <Link href="#" color="inherit" underline="none" sx={{ display: 'block', mb: 1 }}>Get in touch</Link>
-              <Link href="#" color="inherit" underline="none" sx={{ display: 'block', mb: 1 }}>FAQs</Link>
+              <Link href="/" color="inherit" underline="none" sx={{ display: 'block', mb: 1 }}>Home</Link>
+              <Link href="/aboutus" color="inherit" underline="none" sx={{ display: 'block', mb: 1 }}>About</Link>
+              <Link href="/contactus" color="inherit" underline="none" sx={{ display: 'block', mb: 1 }}>Get in touch</Link>
+              <Link href="/faq" color="inherit" underline="none" sx={{ display: 'block', mb: 1 }}>FAQs</Link>
             </Box>
           </Grid>
           
@@ -51,7 +51,7 @@ function Footer() {
           <Grid item xs={12} sm={6} md={4}>
             <Box sx={{ backgroundColor: '#5FEF45', p: 2, borderRadius: '5px' }}>
               <Typography variant="h5" color="textPrimary" sx={{ mb: 1, fontWeight: 'bold' }}>SUBSCRIBE TO GET UPDATED</Typography>
-              <Typography variant="body2" color="textPrimary" sx={{ mb: 2, fontSize: '1rem' }}>
+              <Typography variant="body2" color="textPrimary" sx={{ mb: 2, fontSize: '1rem',  fontFamily: '"Poppins", sans-serif' }}>
                 Lorem ipsum dolor sit amet consectetur. Mi nibh venenatis in suscipit turpis.
               </Typography>
               <Box component="form" sx={{ display: 'flex', gap: 1 }}>

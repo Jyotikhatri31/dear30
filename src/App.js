@@ -24,11 +24,15 @@ import Approval from "./Approval/Approval";
 import AboutUs from "./AboutUs/AboutUs";
 import FAQ from "./FAQ/FAQ";
 import ContactUs from "./ContactUs/ContactUs";
+import ManageAddress from "./Profile/ManageAddress/ManageAddress";
+import SavedCards from "./Profile/SavedCards/SavedCards";
+import Notifications from "./Profile/Notifications/Notifications";
+import ScrollToTop from "./ScrollToTop/ScrollToTop";
 
 function AppContent() {
   const location = useLocation();
-  const noFooterPath = ["/login", "/signup", "/otp", "/resetpassword", "/changepassword"];
-  const noNavbarPath = ["/login", "/signup", "/otp", "/resetpassword", "/changepassword"];
+  const noFooterPath = ["/login", "/signup", "/otp", "/resetpassword", "/changepassword", "/navigationuser"];
+  const noNavbarPath = ["/login", "/signup", "/otp", "/resetpassword", "/changepassword", "/navigationuser"];
 
   return (
     <div className="App">
@@ -55,6 +59,9 @@ function AppContent() {
         <Route path="/aboutus" element={<AboutUs/>} />
         <Route path="/faq" element={<FAQ/>} />
         <Route path="/contactus" element={<ContactUs/>} />
+        <Route path="/manageaddress" element={<ManageAddress/>} />
+        <Route path="/savedcards" element={<SavedCards/>} />
+        <Route path="/notifications" element={<Notifications/>} />
         <Route path="/" element={<Home />} />
       </Routes>
       {!noFooterPath.includes(location.pathname) && <Footer />}
@@ -65,6 +72,7 @@ function AppContent() {
 function App() {
   return (
     <Router>
+      <ScrollToTop/>
       <AppContent />
     </Router>
   );

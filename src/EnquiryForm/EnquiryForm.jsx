@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography, Button, Box, Container, TextField, MenuItem} from "@mui/material";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
+import { Link } from "react-router-dom";
 
 function EnquiryForm() {
   return (
@@ -33,7 +34,7 @@ function EnquiryForm() {
               <MenuItem value="Wholesaler">Wholesaler</MenuItem>
             </TextField>
             <Box sx={{ display: 'inline-block',p: '2px', borderRadius: 2, background: 'linear-gradient(90deg, #78FF00 0%, #fff 100%)'}}>
-              <Button type="submit" fullWidth variant="contained" sx={{background: 'linear-gradient(90deg, #599D21 0%, #179B7E 100%)'}}>Submit</Button>
+              <Link to="/approval"><Button type="submit" fullWidth variant="contained" sx={{background: 'linear-gradient(90deg, #599D21 0%, #179B7E 100%)'}}>Submit</Button></Link>
             </Box>
         </Box>
       </Box>

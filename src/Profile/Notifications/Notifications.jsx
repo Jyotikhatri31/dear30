@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card, CardContent, CardActions, Box, Container, Typography, Button, Grid, List, ListItem, ListItemIcon, ListItemText, Divider, InputBase, IconButton } from '@mui/material';
+import React, { useState } from 'react';
+import {Box, Container, Typography, Grid, List, ListItem, ListItemIcon, ListItemText, Divider, InputBase, IconButton } from '@mui/material';
 import {CreditCard, ExitToApp,} from '@mui/icons-material';
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import BorderAllOutlinedIcon from '@mui/icons-material/BorderAllOutlined';
@@ -7,37 +7,27 @@ import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import img1 from "../../Images/home-4.png";
-import img2 from "../../Images/home-1.png";
 import {Link} from "react-router-dom";
 
-const orders = [
-  {
-    id: 1,
-    img: img2,
-    title: "Girls Pink Moana Printed Dress",
-    status: "Delivered",
-    price: 80.00,
-    quantity: 1,
-  },
-  {
-    id: 2,
-    img: img2,
-    title: "Women Textured Handheld Bag",
-    status: "In Process",
-    price: 80.00,
-    quantity: 1,
-  },
-  {
-    id: 3,
-    img: img2,
-    title: "Tailored Cotton Casual Shirt",
-    status: "In Process",
-    price: 40.00,
-    quantity: 1,
-  },
+const address = [
+  { id: 1, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.it to make a.......",},
+  {id: 2, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.it to make a.......",},
+  {id: 3, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.it to make a.......",},
+  {id: 4, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.it to make a.......",},
+  {id: 5, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.it to make a.......",},
 ];
 
-function MyOrders() {
+
+function Notifications() {
+  const[clickedItems, setClickedItems] = useState({});
+
+  const handleItemClick = (id) => {
+    setClickedItems((prevClickItems) => ({
+      ...prevClickItems,
+      [id] : !prevClickItems[id],
+    }))
+  }
+
   return (
     <Box sx={{ backgroundColor: '#000', color: '#fff', minHeight: '100vh', py: 5 }}>
       <Container maxWidth="lg">
@@ -46,7 +36,7 @@ function MyOrders() {
         <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
           <Typography variant="h3" sx={{ color: '#fff', mb: 3 }}>My Profile</Typography>
           <Box sx={{ display: 'flex', alignItems: 'center', border: '2px solid #00FF00', borderRadius: '10px', padding: '0px 10px', backgroundColor: '#000', width: '100%', maxWidth: '450px', height: '55px', color: '#fff'}}>
-            <InputBase placeholder="Search any products" sx={{ color: '#FFFFFF', flex: 1, paddingLeft: '8px', fontSize: '1.2rem', color: '#fff'}}/>
+            <InputBase placeholder="Search notifications" sx={{ color: '#FFFFFF', flex: 1, paddingLeft: '8px', fontSize: '1.2rem', color: '#fff'}}/>
             <IconButton type="submit" sx={{ padding: '10px', color: '#FFFFFF' }}>
               <SearchIcon sx={{fontSize: '2.2rem'}}/>
             </IconButton>
@@ -114,50 +104,21 @@ function MyOrders() {
         </Grid>
           
         {/* Personal Information Form */}
-        <Grid spacing={2} item xs={12} sm={8} md={9}>
-          {orders.map((order) => (
-          <Grid item xs={12} key={order.id}>
-            <Card sx={{display: 'flex', justifyContent: 'space-between', backgroundColor: '#000', borderBottom: '1px solid #A4A1AA33', mb: '10px'}}>
-              <CardContent>
-                <Box sx={{display: 'flex', color: '#fff'}}>
-                  <Box>
-                    <Box component="img" src={order.img} alt={order.title} sx={{ height: "90px", width: "80px", objectFit: "cover", borderRadius: "2px", marginBottom: "10px",}}/>
-                  </Box>
-                  <Box sx={{marginLeft: '20px'}}>
-                    <Typography variant="h6" sx={{fontWeight: 'bold', mb: '15px'}}>{order.title}</Typography>
-                    <Typography variant="body3">Qty: {order.quantity}</Typography>
-                  </Box>
-                </Box>
-                <Box sx={{display: 'flex', color: '#fff'}}>
-                  <Typography variant='body2' sx={{height: '30px', width: '80px', color: order.status === 'Delivered' ? '#3CD139' : '#E3B231', backgroundColor: order.status === 'Delivered' ? '#3CD1391A' : '#E3B2311A', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: "2px"}}>
-                    {order.status === 'Delivered' ? 'Delivered' : 'In Process'}
-                  </Typography>
-                  <Typography variant="body3" sx={{marginLeft: '22px'}}>
-                    {order.status === 'Delivered' ? 'Your product has been delivered' : 'Your product has been In process'}
-                  </Typography>
-                </Box>
-
-              </CardContent>
-              <CardContent>
-                <Typography variant="h6" sx={{color: '#fff', fontWeight: 'bold'}}>${order.price.toFixed(2)}</Typography>
-              </CardContent>
-              <CardActions sx={{display: 'flex', flexDirection: 'column'}}>
-                <Link to="/productdescription">
-                <Button variant="contained" sx={{marginBottom: '10px', minWidth: '160px', width: 'auto', backgroundColor: '#000', border: '1px solid #fff', textTransform: 'initial'}}>View Order</Button></Link>
-                {order.status === 'Delivered' ? (
-                  <Button variant="outlined" sx={{minWidth: '160px', width: 'auto', backgroundColor: '#fff',border: 'none', color: '#000', textTransform: 'initial'}}>Reorder</Button>
-                  ) : (
-                  <Button variant="contained" color="error" sx={{minWidth: '160px', width: 'auto', backgroundColor: '#FF7262', textTransform: 'initial'}}>Cancel Order</Button>
-                )}
-              </CardActions>
-            </Card>
-          </Grid>
+        <Grid item xs={12} sm={8} md={9}>
+          {address.map((item) => (
+            <Box key={item.id} onClick={() => handleItemClick(item.id)} sx={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#000', mb: 2, color: clickedItems[item.id] ? '#fff' : '#aaa', border: `1px solid ${clickedItems[item.id] ? '#fff': '#aaa'}`, cursor: 'pointer'}}>
+              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flex: 1, p: 1}}>
+                <Typography variant='h6' fontWeight={'bold'}>
+                  {item.description}{!clickedItems[item.id] && (<span style={{height: '15px', width: '15px', borderRadius: '50%', backgroundColor: '#5FEF45', display: 'inline-block', marginLeft: '5px'}}></span>)}</Typography>
+              </Box>
+            </Box>
           ))}
         </Grid>
+
         </Grid>
       </Container>
     </Box>
-  );
+  )
 }
 
-export default MyOrders;
+export default Notifications

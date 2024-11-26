@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card, CardContent, CardActions, Box, Container, Typography, Button, Grid, List, ListItem, ListItemIcon, ListItemText, Divider, InputBase, IconButton } from '@mui/material';
+import React, {useState} from 'react';
+import { Box, Container, Typography, Button, Grid, List, ListItem, ListItemIcon, ListItemText, Divider, InputBase, IconButton } from '@mui/material';
 import {CreditCard, ExitToApp,} from '@mui/icons-material';
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import BorderAllOutlinedIcon from '@mui/icons-material/BorderAllOutlined';
@@ -7,37 +7,48 @@ import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import img1 from "../../Images/home-4.png";
-import img2 from "../../Images/home-1.png";
 import {Link} from "react-router-dom";
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+import card1 from "../../Images/card1.png";
+import card2 from "../../Images/card2.png";
+import card3 from "../../Images/card3.png";
+import card4 from "../../Images/card4.png";
 
-const orders = [
+const address = [
   {
     id: 1,
-    img: img2,
-    title: "Girls Pink Moana Printed Dress",
-    status: "Delivered",
-    price: 80.00,
-    quantity: 1,
+    img: card1,
+    card: "Card 1",
+    cardNo: "7117xxxxxxx1232",
   },
   {
     id: 2,
-    img: img2,
-    title: "Women Textured Handheld Bag",
-    status: "In Process",
-    price: 80.00,
-    quantity: 1,
+    img: card2,
+    card: "Card 2",
+    cardNo: "7117xxxxxxx1232",
   },
   {
     id: 3,
-    img: img2,
-    title: "Tailored Cotton Casual Shirt",
-    status: "In Process",
-    price: 40.00,
-    quantity: 1,
+    img: card3,
+    card: "Card 3",
+    cardNo: "7117xxxxxxx1232",
+  },
+  {
+    id: 4,
+    img: card4,
+    card: "Card 4",
+    cardNo: "7117xxxxxxx1232",
   },
 ];
 
-function MyOrders() {
+function SavedCards() {
+  
+  const[addres, setAddress] = useState(address);
+
+  const handleDelete = (id) => {
+    setAddress(addres.filter((item) => item.id !== id));
+  }
+
   return (
     <Box sx={{ backgroundColor: '#000', color: '#fff', minHeight: '100vh', py: 5 }}>
       <Container maxWidth="lg">
@@ -46,7 +57,7 @@ function MyOrders() {
         <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
           <Typography variant="h3" sx={{ color: '#fff', mb: 3 }}>My Profile</Typography>
           <Box sx={{ display: 'flex', alignItems: 'center', border: '2px solid #00FF00', borderRadius: '10px', padding: '0px 10px', backgroundColor: '#000', width: '100%', maxWidth: '450px', height: '55px', color: '#fff'}}>
-            <InputBase placeholder="Search any products" sx={{ color: '#FFFFFF', flex: 1, paddingLeft: '8px', fontSize: '1.2rem', color: '#fff'}}/>
+            <InputBase placeholder="Search address" sx={{ color: '#FFFFFF', flex: 1, paddingLeft: '8px', fontSize: '1.2rem', color: '#fff'}}/>
             <IconButton type="submit" sx={{ padding: '10px', color: '#FFFFFF' }}>
               <SearchIcon sx={{fontSize: '2.2rem'}}/>
             </IconButton>
@@ -114,50 +125,32 @@ function MyOrders() {
         </Grid>
           
         {/* Personal Information Form */}
-        <Grid spacing={2} item xs={12} sm={8} md={9}>
-          {orders.map((order) => (
-          <Grid item xs={12} key={order.id}>
-            <Card sx={{display: 'flex', justifyContent: 'space-between', backgroundColor: '#000', borderBottom: '1px solid #A4A1AA33', mb: '10px'}}>
-              <CardContent>
-                <Box sx={{display: 'flex', color: '#fff'}}>
-                  <Box>
-                    <Box component="img" src={order.img} alt={order.title} sx={{ height: "90px", width: "80px", objectFit: "cover", borderRadius: "2px", marginBottom: "10px",}}/>
-                  </Box>
-                  <Box sx={{marginLeft: '20px'}}>
-                    <Typography variant="h6" sx={{fontWeight: 'bold', mb: '15px'}}>{order.title}</Typography>
-                    <Typography variant="body3">Qty: {order.quantity}</Typography>
-                  </Box>
+        <Grid item xs={12} sm={8} md={9}>
+          {addres.map((item) => (
+            <Box key={item.id} sx={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#F8F7F7', borderRadius: 2, mb: 3, p: 2, color: '#000',}}>
+              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flex: 1 }}>
+                <Box sx={{ width: 25, height: 25, borderRadius: '50%', border: '3px solid #00FF00', display: 'flex', alignItems: 'center', justifyContent: 'center', mr: 2,}}>
+                  <Box sx={{ width: 15, height: 15, backgroundColor: item.id === 1 ? '#00FF00' : 'transparent', borderRadius: '50%',}}/>
                 </Box>
-                <Box sx={{display: 'flex', color: '#fff'}}>
-                  <Typography variant='body2' sx={{height: '30px', width: '80px', color: order.status === 'Delivered' ? '#3CD139' : '#E3B231', backgroundColor: order.status === 'Delivered' ? '#3CD1391A' : '#E3B2311A', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: "2px"}}>
-                    {order.status === 'Delivered' ? 'Delivered' : 'In Process'}
-                  </Typography>
-                  <Typography variant="body3" sx={{marginLeft: '22px'}}>
-                    {order.status === 'Delivered' ? 'Your product has been delivered' : 'Your product has been In process'}
-                  </Typography>
-                </Box>
-
-              </CardContent>
-              <CardContent>
-                <Typography variant="h6" sx={{color: '#fff', fontWeight: 'bold'}}>${order.price.toFixed(2)}</Typography>
-              </CardContent>
-              <CardActions sx={{display: 'flex', flexDirection: 'column'}}>
-                <Link to="/productdescription">
-                <Button variant="contained" sx={{marginBottom: '10px', minWidth: '160px', width: 'auto', backgroundColor: '#000', border: '1px solid #fff', textTransform: 'initial'}}>View Order</Button></Link>
-                {order.status === 'Delivered' ? (
-                  <Button variant="outlined" sx={{minWidth: '160px', width: 'auto', backgroundColor: '#fff',border: 'none', color: '#000', textTransform: 'initial'}}>Reorder</Button>
-                  ) : (
-                  <Button variant="contained" color="error" sx={{minWidth: '160px', width: 'auto', backgroundColor: '#FF7262', textTransform: 'initial'}}>Cancel Order</Button>
-                )}
-              </CardActions>
-            </Card>
-          </Grid>
+                  <img src={item.img} alt="Card" style={{  }} />
+                  <Typography variant='h6' fontWeight={'bold'}>{item.card}</Typography>
+                  <Typography variant="h6" sx={{ color: '#9B9999'}}>{item.cardNo}</Typography>
+                  <Button sx={{ textTransform: 'none', color: '#000', mr: 2, textDecoration: 'underline', fontSize: '1.1rem'}}>Edit Card</Button>
+              </Box>
+              {/* Action Buttons */}
+              <Box sx={{ position: 'relative', left: '35px' }}>
+                <DeleteOutlinedIcon sx={{ backgroundColor: '#5FEF45', color: '#000', borderRadius: '50%', fontSize: '2.2rem', cursor: 'pointer' }} onClick={() => handleDelete(item.id)}>
+                  <RoomOutlinedIcon/>
+                </DeleteOutlinedIcon>
+              </Box>
+            </Box>
           ))}
         </Grid>
+
         </Grid>
       </Container>
     </Box>
-  );
+  )
 }
 
-export default MyOrders;
+export default SavedCards;

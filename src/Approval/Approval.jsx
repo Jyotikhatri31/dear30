@@ -3,6 +3,7 @@ import { Typography, Button, Box, Container} from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import { Link } from "react-router-dom";
 
 function Approval() {
   return (
@@ -33,9 +34,9 @@ function Approval() {
         <Box sx={{textAlign: "center", flex: 1, position: "relative", display: "flex", flexDirection: "column", alignItems: "center",}}>
           {/* <Box sx={{height: "3px", backgroundColor: "#5FEF45", width: "100%", position: "relative", bottom: '300px', right: '20px',display: 'flex', alignItems: 'center'}}/> */}
           <Typography variant="body6" sx={{ mb: 1 }}>Create Dealer Account</Typography>
-          <Button variant="contained" sx={{background: 'linear-gradient(90deg, #599D21 0%, #179B7E 100%)', color: '#fff', fontWeight: 'bold', fontSize: '1.2rem', textTransform: 'none', borderRadius: 2, px: 6}}>
+          <Link to="/signup"><Button variant="contained" sx={{background: 'linear-gradient(90deg, #599D21 0%, #179B7E 100%)', color: '#fff', fontWeight: 'bold', fontSize: '1.2rem', textTransform: 'none', borderRadius: 2, px: 6}}>
             Sign Up
-          </Button>
+          </Button></Link>
         </Box>
         </Box>
       </Container>

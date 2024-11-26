@@ -31,34 +31,47 @@ function PersonalInfo() {
               <Divider sx={{ borderColor: '#2e2e2e', mb: 2 }} />
               <List component="nav">
                 <Link to="/personalinfo" className='link-c'>
-                <ListItem button selected sx={{'&:hover':{backgroundColor: '#5FEF45'}}}>
-                  <ListItemIcon><PermIdentityOutlinedIcon sx={{ color: '#000' }} /></ListItemIcon>
-                  <ListItemText primary="Personal Information" primaryTypographyProps={{ sx: { color: '#000', fontSize: '1.1rem', whiteSpace: 'nowrap' } }}/>
-                </ListItem>
+                  <ListItem button selected sx={{'&:hover':{backgroundColor: '#5FEF45'}}}>
+                    <ListItemIcon><PermIdentityOutlinedIcon sx={{ color: '#000' }} /></ListItemIcon>
+                    <ListItemText primary="Personal Information" primaryTypographyProps={{ sx: { color: '#000', fontSize: '1.1rem', whiteSpace: 'nowrap' } }}/>
+                  </ListItem>
                 </Link>
                 
                 <Link to="/myorders" className='link-c'>
-                <ListItem button sx={{my: 1,'&:hover':{backgroundColor: '#5FEF45'}}}>
-                  <ListItemIcon><BorderAllOutlinedIcon sx={{ color: '#000' }} /></ListItemIcon>
-                  <ListItemText primary="My Orders" primaryTypographyProps={{ sx: { color: '#000', fontSize: '1.1rem' } }}/>
-                </ListItem>
+                  <ListItem button sx={{my: 1,'&:hover':{backgroundColor: '#5FEF45'}}}>
+                    <ListItemIcon><BorderAllOutlinedIcon sx={{ color: '#000' }} /></ListItemIcon>
+                    <ListItemText primary="My Orders" primaryTypographyProps={{ sx: { color: '#000', fontSize: '1.1rem' } }}/>
+                  </ListItem>
                 </Link>
-                <ListItem button sx={{my: 1, '&:hover':{backgroundColor: '#5FEF45'}}}>
-                  <ListItemIcon><RoomOutlinedIcon sx={{ color: '#000' }} /></ListItemIcon>
-                  <ListItemText primary="Manage Addresses" primaryTypographyProps={{ sx: { color: '#000', fontSize: '1.1rem', whiteSpace: 'nowrap' } }}/>
-                </ListItem>
-                <ListItem button sx={{my: 1, '&:hover':{backgroundColor: '#5FEF45'}}}>
-                  <ListItemIcon><CreditCard sx={{ color: '#000' }} /></ListItemIcon>
-                  <ListItemText primary="Saved Cards" primaryTypographyProps={{ sx: { color: '#000', fontSize: '1.1rem' } }}/>
-                </ListItem>
-                <ListItem button sx={{my: 1, '&:hover':{backgroundColor: '#5FEF45'}}}>
-                  <ListItemIcon><NotificationsNoneOutlinedIcon  sx={{ color: '#000' }} /></ListItemIcon>
-                  <ListItemText primary="Notifications" primaryTypographyProps={{ sx: { color: '#000', fontSize: '1.1rem' } }}/>
-                </ListItem>
-                <ListItem button sx={{my: 1, '&:hover':{backgroundColor: '#5FEF45'}}}>
-                  <ListItemIcon><ExitToApp sx={{ color: '#000' }} /></ListItemIcon>
-                  <ListItemText primary="Log Out" primaryTypographyProps={{ sx: { color: '#000', fontSize: '1.1rem' } }}/>
-                </ListItem>
+
+                
+                <Link to="/manageaddress" className='link-c'>
+                  <ListItem button sx={{my: 1, '&:hover':{backgroundColor: '#5FEF45'}}}>
+                    <ListItemIcon><RoomOutlinedIcon sx={{ color: '#000' }} /></ListItemIcon>
+                    <ListItemText primary="Manage Addresses" primaryTypographyProps={{ sx: { color: '#000', fontSize: '1.1rem', whiteSpace: 'nowrap' } }}/>
+                  </ListItem>
+                </Link>
+
+                <Link to="/savedcards" className='link-c'>
+                  <ListItem button sx={{my: 1, '&:hover':{backgroundColor: '#5FEF45'}}}>
+                    <ListItemIcon><CreditCard sx={{ color: '#000' }} /></ListItemIcon>
+                    <ListItemText primary="Saved Cards" primaryTypographyProps={{ sx: { color: '#000', fontSize: '1.1rem' } }}/>
+                  </ListItem>
+                </Link>
+
+                <Link to="/notifications" className='link-c'>
+                  <ListItem button sx={{my: 1, '&:hover':{backgroundColor: '#5FEF45'}}}>
+                    <ListItemIcon><NotificationsNoneOutlinedIcon  sx={{ color: '#000' }} /></ListItemIcon>
+                    <ListItemText primary="Notifications" primaryTypographyProps={{ sx: { color: '#000', fontSize: '1.1rem' } }}/>
+                  </ListItem>
+                </Link>
+
+                <Link to="/login" className='link-c'>
+                  <ListItem button sx={{my: 1, '&:hover':{backgroundColor: '#5FEF45'}}}>
+                    <ListItemIcon><ExitToApp sx={{ color: '#000' }} /></ListItemIcon>
+                    <ListItemText primary="Log Out" primaryTypographyProps={{ sx: { color: '#000', fontSize: '1.1rem' } }}/>
+                  </ListItem>
+                </Link>
               </List>
             </Box>
           </Grid>

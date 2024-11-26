@@ -82,21 +82,37 @@ const blogs = [
 
 function Home() {
       
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
-    };
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+  };
       
   return (
     <Box>
      <Box className="home-sec">
       <Container maxWidth={false} className='container'>
-        <Box sx={{ position: "relative", zIndex: 1 }}>
+        <Box sx={{ position: "relative", zIndex: 1, fontFamily: '"Poppins", sans-serif' }}>
           <Typography variant="h2" gutterBottom sx={{fontSize: '4rem', fontWeight: 'bold'}}>
             Explore, Book, Conquer
           </Typography>
@@ -109,9 +125,12 @@ function Home() {
               Book Now!
             </Button>
           </Link>
-          <Button variant="outlined" color="secondary" sx={{ margin: '20px 20px 0 0', color: '#fff', backgroundColor: 'none', border: 'none', fontSize: '1.6rem',  fontWeight: 'bold', textTransform: 'initial'}}>
-            Dealers Inquiry <KeyboardArrowRightOutlinedIcon sx={{fontSize: '2.5rem'}}/>
-          </Button>
+          
+          <Link to="/enquiryform">
+            <Button variant="outlined" color="secondary" sx={{ margin: '20px 20px 0 0', color: '#fff', backgroundColor: 'none', border: 'none', fontSize: '1.6rem',  fontWeight: 'bold', textTransform: 'initial'}}>
+              Dealers Inquiry <KeyboardArrowRightOutlinedIcon sx={{fontSize: '2.5rem'}}/>
+            </Button>
+          </Link>
           <Box>
 
           </Box>
@@ -132,6 +151,7 @@ function Home() {
         </Box>
       </Container>
      </Box>
+
      {/* Product-Sec */}
      <Box className="products-sec section" sx={{backgroundColor: "#000"}}>
         <Container maxWidth={false} className='container'>
@@ -162,8 +182,7 @@ function Home() {
           </Box>
         </Container>
      </Box>
-     {/* Third-Sec */}
-     {/* <Box className="third-sec" /> */}
+
      {/* Customer-Sec */}
      <Box className="customer-Sec section" sx={{backgroundColor: "#000"}}>
         <Container maxWidth={false} className='container'>
@@ -197,6 +216,7 @@ function Home() {
           </Box>
         </Container>
      </Box>
+
      {/* Blog-Sec */}
      <Box className="blog-sec section" sx={{backgroundColor: "#000"}}>
         <Container maxWidth={false} className='container'>
@@ -208,7 +228,7 @@ function Home() {
             <Slider {...settings}>
                 {blogs.map((blog, index) => (
                 <Box key={index} sx={{ padding: "10px", textAlign: "left" }}>
-                    <Box component="img" src={blog.img} alt={blog.title} sx={{ height: "200px", width: "100%", objectFit: "cover", borderRadius: "10px", marginBottom: "10px",}}/>
+                    <Box component="img" src={blog.img} alt={blog.title} sx={{ height: "200px", width: "100%", borderRadius: "10px", marginBottom: "10px",}}/>
                     <Typography variant="h6" sx={{ color: "#F3B2D5", backgroundColor: '#381E2C', height: '40px', width: '100%', borderRadius: '5px', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0'}}>News</Typography>
                     <Typography variant="h5" sx={{ color: "white", fontWeight: '600', margin: '20px 0' }}>Tagline</Typography>
                     <Typography variant="h6" sx={{ color: "white", fontWeight: "500" }}>
@@ -233,7 +253,7 @@ function Home() {
 const NextArrow = (props) => {
     const { onClick } = props;
     return (
-      <Box onClick={onClick} sx={{ position: "absolute", top: "50%", right: "22px"}} className="arrows">
+      <Box onClick={onClick} sx={{ position: "absolute", top: "50%", right: "23px"}} className="arrows">
         <KeyboardArrowRightOutlinedIcon sx={{fontSize: "3rem"}}/>
       </Box>
     );
@@ -243,7 +263,7 @@ const NextArrow = (props) => {
 const PrevArrow = (props) => {
     const { onClick } = props;
     return (
-      <Box onClick={onClick} sx={{ position: "absolute", top: "50%", left: "22px",}} className="arrows">
+      <Box onClick={onClick} sx={{ position: "absolute", top: "50%", left: "23px",}} className="arrows">
         <KeyboardArrowRightOutlinedIcon sx={{ transform: "rotate(180deg)", fontSize: "3rem" }} />
       </Box>
     );

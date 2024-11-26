@@ -24,18 +24,19 @@ const customers = [
       title: "Freelance Designer",
   },
   {
-      description:"“I've been using this web hosting service for a few months now and overall it's been fine. The uptime has been good and I haven't had any major issues. The pricing is also reasonable. Nothing particularly stands out as exceptional",
+      description:"“I've been using this web hosting service for over a year and I'm really impressed with the uptime and support. The website has never gone down and the customer service is always quick to help with any issues I have. Highly recommend!”",
       img: img4,
       name: "Tom Williams",
       title: "Software Developer",
   },
   {
-      description:"I've been using this web hosting service for a few months and it's been nothing but problems. My website has gone down multiple times and the customer service has been unresponsive. I would not recommend this company.",
+      description:"“I've been using this web hosting service for over a year and I'm really impressed with the uptime and support. The website has never gone down and the customer service is always quick to help with any issues I have. Highly recommend!”",
       img: img4,
       name: "Michael Brown",
       title: "Online Entrepreneur",
   }
 ]
+
 function ProductDescription() {
   const[quantity, setQuantity] = useState(1);
 
@@ -86,7 +87,7 @@ function ProductDescription() {
       title: "TNT PIPE DREAM LOCK ON",
       price: "280.00",
     },
-];
+  ];
 
   return (
     <Box>
@@ -216,7 +217,7 @@ function ProductDescription() {
 const NextArrow = (props) => {
   const { onClick } = props;
   return (
-    <Box onClick={onClick} sx={{ position: "absolute", top: "50%", right: "10px"}} className="arrows">
+    <Box onClick={onClick} sx={{ position: "absolute", top: "50%", right: "23px"}} className="arrows">
       <KeyboardArrowRightOutlinedIcon sx={{fontSize: "3rem"}}/>
     </Box>
   );
@@ -226,7 +227,7 @@ const NextArrow = (props) => {
 const PrevArrow = (props) => {
   const { onClick } = props;
   return (
-    <Box onClick={onClick} sx={{ position: "absolute", top: "50%", left: "10px",}} className="arrows">
+    <Box onClick={onClick} sx={{ position: "absolute", top: "50%", left: "23px",}} className="arrows">
       <KeyboardArrowRightOutlinedIcon sx={{ transform: "rotate(180deg)", fontSize: "3rem" }} />
     </Box>
   );
