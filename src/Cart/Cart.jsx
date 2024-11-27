@@ -11,27 +11,15 @@ import {Link} from "react-router-dom";
 function Cart() {
 
   const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      image: img2,
-      name: "TNT PIPE DREAM LOCK ON",
-      price: 34.43,
-      quantity: 1,
-    },
-    {
-      id: 2,
-      image: img2,
-      name: "TNT PIPE DREAM LOCK ON",
-      price: 30.43,
-      quantity: 1,
-    }
+    {id: 1, image: img2, name: "TNT PIPE DREAM LOCK ON", price: 34.43, quantity: 1, },
+    { id: 2, image: img2, name: "TNT PIPE DREAM LOCK ON", price: 30.43, quantity: 1, }
   ]);
 
   const handleQuantityChange = (type, itemId) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
         item.id === itemId ? { ...item, quantity: type === "Incre" ? item.quantity + 1 : Math.max(item.quantity - 1, 1), }: item)
-    )};
+  )};
 
   const handleRemoveItem = (id) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
@@ -78,15 +66,15 @@ function Cart() {
                 {cartItems.map((item) => (
                   <TableRow key={item.id}>
                     <TableCell sx={{borderBottom: '1px solid #5FEF45'}}>
-                      <Box display="flex" alignItems="center">
+                      <Box sx={{display: "flex", alignItems: "center", flexDirection: {sm: 'column', md:'row'}}}>
                         <Box component="img" src={item.image} alt={item.name} sx={{ height: 50, width: 50, marginRight: 2 }} />
-                        <Typography variant="body1" sx={{ color: "#fff",fontSize: '1rem' }}>{item.name}</Typography>
+                        <Typography variant="body1" sx={{ color: "#fff",fontSize: '1rem', textAlign: {xs: "center", md: "left"} }}>{item.name}</Typography>
                       </Box>
                     </TableCell>
 
                     <TableCell sx={{color: '#fff', borderBottom: '1px solid #5FEF45',fontSize: '1rem'}}>${item.price.toFixed(2)}</TableCell>
                     <TableCell sx={{borderBottom: '1px solid #5FEF45', py: 5}}>
-                      <Box sx={{display: 'flex', alignItems: 'center'}}>
+                      <Box sx={{display: 'flex', alignItems: 'center', justifyContent: {xs: 'center', md: 'flex-start'}}}>
                         <IconButton sx={{border: '2px solid #fff'}} onClick={() => handleQuantityChange("Decre", item.id)}>
                           <RemoveIcon sx={{color: '#fff'}}/>
                         </IconButton>
@@ -127,4 +115,4 @@ function Cart() {
   )
 }
 
-export default Cart
+export default Cart;

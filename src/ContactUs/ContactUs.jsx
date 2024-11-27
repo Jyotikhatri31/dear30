@@ -9,14 +9,14 @@ function ContactUs() {
     <Box sx={{backgroundColor: '#000'}}>
       <Box className="prod-header">
         <Container maxWidth={false} className="container center-content" sx={{flexDirection: 'column'}}>
-          <Typography variant="h3" sx={{fontWeight: 'bold'}}>Get in touch</Typography>
-          <Typography variant='h6'>Reach out, and let's create a universe of possibilities together!</Typography>
+          <Typography variant="h3" sx={{fontWeight: 'bold', textAlign: 'center'}}>Get in touch</Typography>
+          <Typography variant='h6' sx={{textAlign: 'center'}}>Reach out, and let's create a universe of possibilities together!</Typography>
         </Container>
       </Box>
 
       {/* Contact-section */}
       <Box className='center-content'>
-        <Container maxWidth={false} className='container' sx={{ display: 'flex', gap: 2, flexDirection: { xs: 'column', md: 'row' }, backgroundColor: '#111', borderRadius: '16px', my: 4, py: 4 }}>
+        <Container maxWidth={false} className='container' sx={{ display: 'flex', gap: 2, flexDirection: { xs: 'column-reverse', md: 'row' }, backgroundColor: '#111', borderRadius: '16px', my: 4, py: 4 }}>
         {/* Form-section */}
           <Box sx={{flex: 1, color: '#fff'}}>
             <Typography variant='h5' sx={{fontWeight: 'bold'}}>Let’s connect constellations</Typography>
@@ -38,18 +38,18 @@ function ContactUs() {
           </Box>
           {/* Image-section */}
           <Box sx={{flex: 1, borderRadius: '12px', overflow: 'hidden'}} className='center-content'>
-            <Box component="img" src={img1} alt="about-1" sx={{ maxHeight: '500px',height: 'intial', width: "450px", objectFit: "cover", marginBottom: "10px"}}/>
+            <Box component="img" src={img1} alt="about-1" sx={{ maxHeight: '500px',height: 'intial', width: {sm:"450px", md: '100%'}, objectFit: "contain", marginBottom: "10px"}}/>
           </Box>
         </Container>
       </Box>
       
       <Box sx={{background: 'linear-gradient(90deg, #5FEF45 0%, #51B175 100%)', py: 5}}> 
         <Container maxWidth={false} className='container center-content' sx={{flexDirection: 'column'}}>
-          <Typography variant='h3' sx={{color: '#fff', fontWeight: 'bold'}}>Ready to get started?</Typography>
-          <Typography variant='h4' sx={{my: 2}}>Talk to us today</Typography>
-          <Box sx={{display: 'flex'}}>
-            <Link to="/products"><Button variant='contained' sx={{ flex: 1, mr: 2, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: 16, color: '#57CA61', backgroundColor: '#fff'}}>Shop Now</Button></Link>
-            <Link to="/enquiryform"><Button variant='outlined' color='success' sx={{ flex: 1, ml: 2, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: 10, color: '#fff', border: '2px solid #fff' }}>Dealer Inquiry</Button></Link>
+          <Typography variant='h3' sx={{color: '#fff', fontWeight: 'bold', textAlign: 'center'}}>Ready to get started?</Typography>
+          <Typography variant='h4' sx={{my: 2, textAlign: 'center'}}>Talk to us today</Typography>
+          <Box sx={{display: {xs: 'block', md: 'flex'}, flexDirection: {xs: 'column', md: 'row'}, textAlign: 'center'}}>
+            <Link to="/products"><Button variant='contained' sx={{ flex: 1, mr: {md: 2}, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: {md: 16}, color: '#57CA61', backgroundColor: '#fff', mb: {xs: 2}, width: {xs: '100%'}}}>Shop Now</Button></Link>
+            <Link to="/enquiryform"><Button variant='outlined' color='success' sx={{ flex: 1, ml: {md: 2}, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: {md: 10}, color: '#fff', border: '2px solid #fff',  width: {xs: '100%'}}}>Dealer Inquiry</Button></Link>
           </Box>
         </Container>
       </Box>

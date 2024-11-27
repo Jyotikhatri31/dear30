@@ -43,9 +43,9 @@ function MyOrders() {
       <Container maxWidth="lg">
         
         {/* Profile Title */}
-        <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
+        <Box sx={{display: {sm: 'block',md:'flex'}, flexDirection: {sm: 'column', md: 'row'}, justifyContent: 'space-between'}}>
           <Typography variant="h3" sx={{ color: '#fff', mb: 3 }}>My Profile</Typography>
-          <Box sx={{ display: 'flex', alignItems: 'center', border: '2px solid #00FF00', borderRadius: '10px', padding: '0px 10px', backgroundColor: '#000', width: '100%', maxWidth: '450px', height: '55px', color: '#fff'}}>
+          <Box sx={{ display: 'flex', alignItems: 'center', border: '2px solid #00FF00', borderRadius: '10px', padding: '0px 10px', backgroundColor: '#000', width: '100%', maxWidth: '450px', height: '55px', color: '#fff', marginBottom: {xs: 3}}}>
             <InputBase placeholder="Search any products" sx={{ color: '#FFFFFF', flex: 1, paddingLeft: '8px', fontSize: '1.2rem', color: '#fff'}}/>
             <IconButton type="submit" sx={{ padding: '10px', color: '#FFFFFF' }}>
               <SearchIcon sx={{fontSize: '2.2rem'}}/>
@@ -54,7 +54,6 @@ function MyOrders() {
         </Box>
 
         <Grid container spacing={4}>
-          
         {/* Sidebar Navigation */}
         <Grid item xs={12} sm={4} md={3}>
             <Box sx={{ backgroundColor: '#fff', borderRadius: 2 }}>
@@ -117,13 +116,13 @@ function MyOrders() {
         <Grid spacing={2} item xs={12} sm={8} md={9}>
           {orders.map((order) => (
           <Grid item xs={12} key={order.id}>
-            <Card sx={{display: 'flex', justifyContent: 'space-between', backgroundColor: '#000', borderBottom: '1px solid #A4A1AA33', mb: '10px'}}>
+            <Card sx={{display: 'flex',flexDirection: { xs: 'column', sm: 'row' },  justifyContent: 'space-between', backgroundColor: '#000', borderBottom: '1px solid #A4A1AA33', mb: '10px'}}>
               <CardContent>
-                <Box sx={{display: 'flex', color: '#fff'}}>
+                <Box sx={{display: {xs: 'block', md: 'flex'}, flexDirection: {xs: 'column', md: 'row'}, color: '#fff'}}>
                   <Box>
                     <Box component="img" src={order.img} alt={order.title} sx={{ height: "90px", width: "80px", objectFit: "cover", borderRadius: "2px", marginBottom: "10px",}}/>
                   </Box>
-                  <Box sx={{marginLeft: '20px'}}>
+                  <Box sx={{marginLeft: {xs: '0px', md: '20px'}}}>
                     <Typography variant="h6" sx={{fontWeight: 'bold', mb: '15px'}}>{order.title}</Typography>
                     <Typography variant="body3">Qty: {order.quantity}</Typography>
                   </Box>
@@ -138,12 +137,15 @@ function MyOrders() {
                 </Box>
 
               </CardContent>
+
               <CardContent>
                 <Typography variant="h6" sx={{color: '#fff', fontWeight: 'bold'}}>${order.price.toFixed(2)}</Typography>
               </CardContent>
-              <CardActions sx={{display: 'flex', flexDirection: 'column'}}>
+
+              <CardActions sx={{display: {xs: 'block', md: 'flex'}, flexDirection: {xs: 'row', md: 'column'}, justifyContent: {xs: 'space-between'}}}>
                 <Link to="/productdescription">
-                <Button variant="contained" sx={{marginBottom: '10px', minWidth: '160px', width: 'auto', backgroundColor: '#000', border: '1px solid #fff', textTransform: 'initial'}}>View Order</Button></Link>
+                  <Button variant="contained" sx={{marginBottom: '10px', minWidth: '160px', width: 'auto', backgroundColor: '#000', border: '1px solid #fff', textTransform: 'initial'}}>View Order</Button>
+                </Link>
                 {order.status === 'Delivered' ? (
                   <Button variant="outlined" sx={{minWidth: '160px', width: 'auto', backgroundColor: '#fff',border: 'none', color: '#000', textTransform: 'initial'}}>Reorder</Button>
                   ) : (

@@ -113,7 +113,7 @@ function Home() {
      <Box className="home-sec">
       <Container maxWidth={false} className='container'>
         <Box sx={{ position: "relative", zIndex: 1, fontFamily: '"Poppins", sans-serif' }}>
-          <Typography variant="h2" gutterBottom sx={{fontSize: '4rem', fontWeight: 'bold'}}>
+          <Typography variant="h2" gutterBottom sx={{fontSize: {xs: '3rem', md: '4rem'}, fontWeight: 'bold', paddingTop: {xs: '100px'}}}>
             Explore, Book, Conquer
           </Typography>
           <Typography variant="h5" gutterBottom>
@@ -135,7 +135,7 @@ function Home() {
 
           </Box>
         </Box>
-        <Box sx={{display: 'flex', marginTop: '40px'}} className="home-icons">
+        <Box sx={{display: 'flex', marginTop: {xs: '10px', md: '40px'}}} className="home-icons">
             <Box className="fav-i" sx={{marginRight:'20px'}}>
                 <Box><HttpsOutlinedIcon sx={{color: '#77F044', marginRight: '10px', fontSize: '1.9rem'}}/></Box>
                 <Typography sx={{fontWeight: 'bold'}}>Protected <br/>Payment Gateway</Typography>

@@ -49,7 +49,7 @@ function FAQ() {
 
       {/* Profile Title */}
       <Box sx={{py: 4}}>
-        <Container maxWidth={false} className="container" sx={{display: 'flex', justifyContent: 'space-between'}}>
+        <Container maxWidth={false} className="container" sx={{display: {sm: 'block',md:'flex'}, flexDirection: {sm: 'column', md: 'row'}, justifyContent: 'space-between'}}>
           <Typography variant="h3" sx={{ color: '#fff', mb: 3 }}>Frequently Asked Question</Typography>
           <Box sx={{ display: 'flex', alignItems: 'center', border: '2px solid #00FF00', borderRadius: '10px', padding: '0px 10px', backgroundColor: '#000', width: '100%', maxWidth: '450px', height: '55px', color: '#fff'}}>
             <InputBase placeholder="Search any products" sx={{ flex: 1, paddingLeft: '8px', fontSize: '1.2rem', color: '#fff'}}/>
@@ -67,7 +67,7 @@ function FAQ() {
             <Box key={index} sx={{ backgroundColor: '#000', color: '#fff', mb: 2, borderRadius: '8px', overflow: 'hidden', border: '1px solid #152329' }}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer' }} onClick={() => handleToggle(index)}>
               <Typography variant="h6" sx={{ fontWeight: '500', p: 2 }}>0{index + 1}. {faq.question}</Typography>
-              <Box sx={{ display: 'flex', alignItems: 'center', backgroundColor: openIndex === 'index' ? '#5FEF4533' : '#5FEF45', p: 2}}>
+              <Box sx={{ display: 'flex', alignItems: 'center', backgroundColor: openIndex === 'index' ? '#5FEF4533' : '#5FEF45', p: {xs: 4,md:2}}}>
                 <Typography variant="body1" sx={{ fontWeight: 'bold', mr: 1, }}></Typography>
                 {openIndex === index ? <RemoveIcon /> : <AddIcon />}
               </Box>
@@ -80,11 +80,11 @@ function FAQ() {
 
       <Box sx={{background: 'linear-gradient(90deg, #5FEF45 0%, #51B175 100%)', py: 5, mt: 8}}> 
         <Container maxWidth={false} className='container center-content' sx={{flexDirection: 'column'}}>
-          <Typography variant='h3' sx={{color: '#fff', fontWeight: 'bold'}}>Ready to get started?</Typography>
-          <Typography variant='h4' sx={{my: 2}}>Talk to us today</Typography>
-          <Box sx={{display: 'flex'}}>
-            <Link to="/contactus"><Button variant='contained' sx={{ flex: 1, mr: 2, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: 16, color: '#57CA61', backgroundColor: '#fff'}}>Contact Us</Button></Link>
-            <Link to="/enquiryform"><Button variant='outlined' color='success' sx={{ flex: 1, ml: 2, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: 10, color: '#fff', border: '2px solid #fff' }}>Submit Inquiry</Button></Link>
+          <Typography variant='h3' sx={{color: '#fff', fontWeight: 'bold', textAlign: 'center'}}>Ready to get started?</Typography>
+          <Typography variant='h4' sx={{my: 2, textAlign: 'center'}}>Talk to us today</Typography>
+          <Box sx={{display: {xs: 'block', md: 'flex'}, flexDirection: {xs: 'column', md: 'row'}, textAlign: 'center'}}>
+            <Link to="/contactus"><Button variant='contained' sx={{ flex: 1, mr: {md: 2}, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: {md: 16}, color: '#57CA61', backgroundColor: '#fff', mb: {xs: 2}, width: {xs: '100%'}}}>Contact Us</Button></Link>
+            <Link to="/enquiryform"><Button variant='outlined' color='success' sx={{ flex: 1, ml: {md: 2}, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: {md: 10}, color: '#fff', border: '2px solid #fff',  width: {xs: '100%'}}}>Submit Inquiry</Button></Link>
           </Box>
         </Container>
       </Box>

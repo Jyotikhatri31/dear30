@@ -29,14 +29,14 @@ function AboutUs() {
 
       {/* Paragraph */}
       <Box sx={{color: '#fff'}} className='section'>
-        <Container maxWidth={false} className="container center-content">
-          <Box sx={{width: '50%', marginRight: '20px'}}>
+        <Container maxWidth={false} className="container center-content" sx={{flexDirection: {xs: 'column-reverse', md: 'row'}}}>
+          <Box sx={{width: {sx: '100%', md: '50%'}, marginRight: {sx: '0px', md: '20px'}}}>
             <Typography variant='h4' sx={{fontWeight: 'bold', mb: 2}}>About Deer30</Typography>
             <Typography variant='body6' sx={{display: 'block', mb: 2}}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Typography>
             <Typography variant='body5'>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</Typography>
           </Box>
           <Box>
-            <Box component="img" src={img1} alt="about-1" sx={{ height: "300px", width: "400px", objectFit: "cover", marginBottom: "10px"}}/>
+            <Box component="img" src={img1} alt="about-1" sx={{ height: {xs: "250px",md:"300px"}, width: {xs: "300px",md:"400px"}, objectFit: "cover", marginBottom: "10px"}}/>
           </Box>
         </Container>
       </Box>
@@ -44,7 +44,7 @@ function AboutUs() {
       {/* Products-Cate */}
       <Box sx={{color: '#fff'}}> 
         <Container maxWidth={false} className="container center-content">
-          <Box sx={{display:  'flex', gap: '50px'}}>
+          <Box sx={{display:  'flex', gap: '50px', flexWrap: 'wrap'}}>
             <Typography variant='h4' sx={{fontWeight: 'bold'}}>Mission</Typography><GpsFixedOutlinedIcon sx={{fontSize: '2.5rem'}}/>
             <Typography variant='h4' sx={{fontWeight: 'bold'}}>Vision</Typography><GpsFixedOutlinedIcon sx={{fontSize: '2.5rem'}}/>
             <Typography variant='h4' sx={{fontWeight: 'bold'}}>Values</Typography>
@@ -52,7 +52,7 @@ function AboutUs() {
         </Container>
       </Box>
       <Box className='section'>
-        <Container maxWidth={false} className="container center-content">
+        <Container maxWidth={false} className="container center-content" sx={{ flexWrap: 'wrap'}}>
           <Box component="img" src={img2} alt="about-1" sx={{ height: "350px", width: "400px", objectFit: "contain", marginBottom: "10px"}}/>
           <Box component="img" src={img3} alt="about-1" sx={{ height: "350px", width: "400px", objectFit: "contain", marginBottom: "10px"}}/>
           <Box component="img" src={img4} alt="about-1" sx={{ height: "350px", width: "400px", objectFit: "contain", marginBottom: "10px"}}/>
@@ -84,11 +84,11 @@ function AboutUs() {
 
       <Box sx={{background: 'linear-gradient(90deg, #5FEF45 0%, #51B175 100%)', py: 5}}> 
         <Container maxWidth={false} className='container center-content' sx={{flexDirection: 'column'}}>
-          <Typography variant='h3' sx={{color: '#fff', fontWeight: 'bold'}}>Ready to get started?</Typography>
-          <Typography variant='h4' sx={{my: 2}}>Talk to us today</Typography>
-          <Box sx={{display: 'flex'}}>
-            <Link to="/products"><Button variant='contained' sx={{ flex: 1, mr: 2, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: 16, color: '#57CA61', backgroundColor: '#fff'}}>Shop Now</Button></Link>
-            <Link to="/enquiryform"><Button variant='outlined' color='success' sx={{ flex: 1, ml: 2, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: 10, color: '#fff', border: '2px solid #fff' }}>Dealer Inquiry</Button></Link>
+          <Typography variant='h3' sx={{color: '#fff', fontWeight: 'bold', textAlign: 'center'}}>Ready to get started?</Typography>
+          <Typography variant='h4' sx={{my: 2, textAlign: 'center'}}>Talk to us today</Typography>
+          <Box sx={{display: {xs: 'block', md: 'flex'}, flexDirection: {xs: 'column', md: 'row'}, textAlign: 'center'}}>
+            <Link to="/products"><Button variant='contained' sx={{ flex: 1, mr: {md: 2}, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: {md: 16}, color: '#57CA61', backgroundColor: '#fff',mb: {xs: 2}, width: {xs: '100%'}}}>Shop Now</Button></Link>
+            <Link to="/enquiryform"><Button variant='outlined' color='success' sx={{ flex: 1, ml: {md: 2}, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: {md: 10}, color: '#fff', border: '2px solid #fff', width: {xs: '100%'}}}>Dealer Inquiry</Button></Link>
           </Box>
         </Container>
       </Box>
