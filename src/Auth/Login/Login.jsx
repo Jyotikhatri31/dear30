@@ -41,7 +41,7 @@ function Login() {
       />
 
       {/* Remember Me & Forgot Password */}
-      <Box display="flex" alignItems="center" justifyContent="space-between" maxWidthwidth="520px" width="100%" mb={3}>
+      <Box display="flex" alignItems="center" justifyContent="space-between" maxWidth="520px" width="100%" mb={3}>
         <FormControlLabel control={<Checkbox sx={{ color: green[500] }} />} label={<Typography sx={{ color: "white" }}>Remember me</Typography>}/>
         <Link to="/resetpassword">
           <Typography variant="body2" color="white" sx={{ cursor: "pointer" }}>Forgot your password?</Typography>
@@ -51,7 +51,7 @@ function Login() {
       {/* Login Button */}
       <Link to="/resetpassword">
         <Box sx={{ display: 'inline-block', p: '2px', borderRadius: 2, background: 'linear-gradient(90deg, #78FF00 0%, #fff 100%)', mb: 3 }}>
-          <Button variant="contained" sx={{ background: 'linear-gradient(90deg, #599D21 0%, #179B7E 100%)', color: '#fff', fontWeight: 'bold', fontSize: '1.2rem', textTransform: 'none', borderRadius: 2, px: 3, width: "100%", maxWidth: "520px" }}>Log In</Button>
+          <Button variant="contained" sx={{ background: 'linear-gradient(90deg, #599D21 0%, #179B7E 100%)', color: '#fff', fontWeight: 'bold', fontSize: '1.2rem', textTransform: 'none', borderRadius: 2, px: 3, width: {xs:"350px",md:"520px"} }}>Log In</Button>
         </Box>
       </Link>
       
