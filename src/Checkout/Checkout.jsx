@@ -8,9 +8,9 @@ import { Link } from "react-router-dom";
 
 function Checkout() {
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '75vh', backgroundColor: '#000' }}>
+    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '75vh', backgroundColor: '#000', py: {xs: 5, md: 0} }}>
       <Container maxWidth={false} className="container center-content" sx={{flexDirection: 'column'}}>
-        <Box maxWidth="md" sx={{display: 'flex', backgroundColor: '#5FEF45', borderRadius: 4, p: 3 }}>
+        <Box maxWidth="md" sx={{display: {xs: 'column', md:'flex'}, backgroundColor: '#5FEF45', borderRadius: 4, p: 3 }}>
           <RadioGroup defaultValue="creditCard" name="payment-method">
             <Box sx={{ display: 'flex', alignItems: 'center', mt: 1}}>
               <FormControlLabel value="creditCard" control={<Radio />} label={<Typography variant='h6' fontWeight="bold" sx={{ display: 'flex', alignItems: 'center' }}>
@@ -30,7 +30,7 @@ function Checkout() {
               </Typography>}/>
             </Box>
 
-            <Box sx={{ display: 'flex', alignItems: 'center', mt: 3}}>
+            <Box sx={{ display: 'flex', alignItems: 'center', mt: 3, mb: {xs: 2, md:0}}}>
               <FormControlLabel value="gpay" control={<Radio />} label={<Typography variant='h6' fontWeight="bold" sx={{ display: 'flex', alignItems: 'center' }}>
               <Box component="img" src={gpay} alt="paypal-icon" sx={{ height: 25, width: 25, marginRight: 1 }} /> Gpay
               </Typography>}/>

@@ -54,9 +54,9 @@ function SavedCards() {
       <Container maxWidth="lg">
         
         {/* Profile Title */}
-        <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
+        <Box sx={{display: {sm: 'block',md:'flex'}, flexDirection: {sm: 'column', md: 'row'}, justifyContent: 'space-between'}}>
           <Typography variant="h3" sx={{ color: '#fff', mb: 3 }}>My Profile</Typography>
-          <Box sx={{ display: 'flex', alignItems: 'center', border: '2px solid #00FF00', borderRadius: '10px', padding: '0px 10px', backgroundColor: '#000', width: '100%', maxWidth: '450px', height: '55px', color: '#fff'}}>
+          <Box sx={{ display: 'flex', alignItems: 'center', border: '2px solid #00FF00', borderRadius: '10px', padding: '0px 10px', backgroundColor: '#000', width: '100%', maxWidth: '450px', height: '55px', color: '#fff',  marginBottom: {xs: 3}}}>
             <InputBase placeholder="Search address" sx={{ color: '#FFFFFF', flex: 1, paddingLeft: '8px', fontSize: '1.2rem', color: '#fff'}}/>
             <IconButton type="submit" sx={{ padding: '10px', color: '#FFFFFF' }}>
               <SearchIcon sx={{fontSize: '2.2rem'}}/>
@@ -128,17 +128,18 @@ function SavedCards() {
         <Grid item xs={12} sm={8} md={9}>
           {addres.map((item) => (
             <Box key={item.id} sx={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#F8F7F7', borderRadius: 2, mb: 3, p: 2, color: '#000',}}>
-              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flex: 1 }}>
+              <Box sx={{ display: {xs:'block', md:'flex'}, flexDirection: {xs: 'column', md: 'row'}, alignItems: 'center', justifyContent: 'space-between', flex: 1 }}>
                 <Box sx={{ width: 25, height: 25, borderRadius: '50%', border: '3px solid #00FF00', display: 'flex', alignItems: 'center', justifyContent: 'center', mr: 2,}}>
                   <Box sx={{ width: 15, height: 15, backgroundColor: item.id === 1 ? '#00FF00' : 'transparent', borderRadius: '50%',}}/>
                 </Box>
-                  <img src={item.img} alt="Card" style={{  }} />
-                  <Typography variant='h6' fontWeight={'bold'}>{item.card}</Typography>
-                  <Typography variant="h6" sx={{ color: '#9B9999'}}>{item.cardNo}</Typography>
-                  <Button sx={{ textTransform: 'none', color: '#000', mr: 2, textDecoration: 'underline', fontSize: '1.1rem'}}>Edit Card</Button>
+                {/* <img src={item.img} alt="Card"/> */}
+                <Box component="img" src={item.img} alt={item.card} sx={{objectFit: "cover", marginTop: {xs: '20px', md: '0px'}}}/>
+                <Typography variant='h6' fontWeight={'bold'}>{item.card}</Typography>
+                <Typography variant="h6" sx={{ color: '#9B9999'}}>{item.cardNo}</Typography>
+                <Button sx={{ textTransform: 'none', color: '#000', mr: 2, textDecoration: 'underline', fontSize: '1.1rem'}}>Edit Card</Button>
               </Box>
               {/* Action Buttons */}
-              <Box sx={{ position: 'relative', left: '35px' }}>
+              <Box sx={{ position: 'relative', left: {xs: '28px', md:'35px'} }}>
                 <DeleteOutlinedIcon sx={{ backgroundColor: '#5FEF45', color: '#000', borderRadius: '50%', fontSize: '2.2rem', cursor: 'pointer' }} onClick={() => handleDelete(item.id)}>
                   <RoomOutlinedIcon/>
                 </DeleteOutlinedIcon>

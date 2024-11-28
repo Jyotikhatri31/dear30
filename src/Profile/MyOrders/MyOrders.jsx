@@ -127,7 +127,7 @@ function MyOrders() {
                     <Typography variant="body3">Qty: {order.quantity}</Typography>
                   </Box>
                 </Box>
-                <Box sx={{display: 'flex', color: '#fff'}}>
+                <Box sx={{display: 'flex', color: '#fff', marginTop: {xs: '10px', md: '0px'}}}>
                   <Typography variant='body2' sx={{height: '30px', width: '80px', color: order.status === 'Delivered' ? '#3CD139' : '#E3B231', backgroundColor: order.status === 'Delivered' ? '#3CD1391A' : '#E3B2311A', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: "2px"}}>
                     {order.status === 'Delivered' ? 'Delivered' : 'In Process'}
                   </Typography>
@@ -142,14 +142,14 @@ function MyOrders() {
                 <Typography variant="h6" sx={{color: '#fff', fontWeight: 'bold'}}>${order.price.toFixed(2)}</Typography>
               </CardContent>
 
-              <CardActions sx={{display: {xs: 'block', md: 'flex'}, flexDirection: {xs: 'row', md: 'column'}, justifyContent: {xs: 'space-between'}}}>
+              <CardActions sx={{display: {xs: 'flex', md: 'flex'}, flexDirection: {xs: 'row', md: 'column'}, justifyContent: {xs: 'space-between', md: 'start'}}}>
                 <Link to="/productdescription">
-                  <Button variant="contained" sx={{marginBottom: '10px', minWidth: '160px', width: 'auto', backgroundColor: '#000', border: '1px solid #fff', textTransform: 'initial'}}>View Order</Button>
+                  <Button variant="contained" sx={{marginBottom: {xs: '0px',md: '10px'}, minWidth:  {xs: '140px', md:'160px'}, width: 'auto', backgroundColor: '#000', border: '1px solid #fff', textTransform: 'initial', marginLeft: '0px!important'}}>View Order</Button>
                 </Link>
                 {order.status === 'Delivered' ? (
-                  <Button variant="outlined" sx={{minWidth: '160px', width: 'auto', backgroundColor: '#fff',border: 'none', color: '#000', textTransform: 'initial'}}>Reorder</Button>
+                  <Button variant="outlined" sx={{minWidth: {xs: '140px', md:'160px'}, width: 'auto', backgroundColor: '#fff',border: 'none', color: '#000',border: '1px solid #fff', textTransform: 'initial'}}>Reorder</Button>
                   ) : (
-                  <Button variant="contained" color="error" sx={{minWidth: '160px', width: 'auto', backgroundColor: '#FF7262', textTransform: 'initial'}}>Cancel Order</Button>
+                  <Button variant="contained" color="error" sx={{minWidth:  {xs: '140px', md:'160px'}, width: 'auto', backgroundColor: '#FF7262',border: '1px solid #FF7262', textTransform: 'initial'}}>Cancel Order</Button>
                 )}
               </CardActions>
             </Card>

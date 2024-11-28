@@ -36,6 +36,10 @@ body {
   color: var(--text-color);
 }
 
+box{
+  font-family: "Poppins", sans-serif!important;
+}
+
 .section{
   padding: 80px 0;
 }

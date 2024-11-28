@@ -28,7 +28,6 @@ function OrderTracking() {
                 <Typography variant="h6" sx={{ color: '#aaa' }}>
                   {index === 0 ? 'Wed, 1st Jan' : index === 1 ? 'Wed, 1st Jan' : index === 2 ? 'Wed, 2st Jan' : 'Expected by Sat, 5th Jan'}
                 </Typography>
-                {/* Horizontal line */}
                 {index < 3 && (
                   <Box sx={{ position: 'absolute', top: '50px', left: '50%', right: '-50%', height: '5px', backgroundColor: '#777'}} />
                 )}

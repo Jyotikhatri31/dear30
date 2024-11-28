@@ -69,6 +69,22 @@ function ProductDescription() {
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
   };
 
   const products = [
@@ -101,13 +117,13 @@ function ProductDescription() {
 
       <Box sx={{ backgroundColor: "#000", color: "#fff", paddingY: 4 }}>  
         <Container maxWidth={false} className="container">
-          <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
+          <Box sx={{display: {xs: 'column', md:'flex'}, justifyContent: 'space-between'}}>
             <Box component="img" src={prodDescription.img} alt={prodDescription.title} sx={{ height: "600px", width: "100%", objectFit: "contain", borderRadius: "10px" }}/>
 
             <Box sx={{mr: 4}}>
               <Typography variant="h3" sx={{ fontWeight: 'bold', mt: 4 }}>{prodDescription.title}</Typography>
-              <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
-                <Typography variant="h3" sx={{ color: "#4CAF50", my: 4, fontWeight: 'bold' }}>{prodDescription.price}</Typography>
+              <Box sx={{display: {xs: 'column',md:'flex'}, justifyContent: 'space-between'}}>
+                <Typography variant="h3" sx={{ color: "#4CAF50", my: 4, fontWeight: 'bold', mb: {xs: 2, md: 4} }}>{prodDescription.price}</Typography>
 
                 <Box sx={{display: 'flex', mt: 2 }}>
                   <Typography variant='h6' sx={{mr:2, mt: 4}}>Quantity</Typography>
@@ -124,9 +140,9 @@ function ProductDescription() {
                 </Box>
               </Box>
 
-              <Box sx={{display: 'flex', gap: '2', mt: 3}}>
+              <Box sx={{display: {xs:'column',md:'flex'}, gap: '2', mt: 3}}>
                 <Link to="/checkout"><Button variant='contained' color='success' sx={{ flex: 1, mr: 2, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: 16}}>Buy</Button></Link>
-                <Link to="/cart"><Button variant='outlined' color='success' sx={{ flex: 1, ml: 2, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: 10 }}>Add to Cart</Button></Link>
+                <Link to="/cart"><Button variant='outlined' color='success' sx={{ flex: 1, ml: {xs: 0, md:2}, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: 10.5, mt: {xs: 2, md: 0} }}>Add to Cart</Button></Link>
               </Box>
             </Box>
           </Box>
