@@ -15,20 +15,20 @@ function EnquiryForm() {
       </Box>
 
       <Box sx={{backgroundColor: 'black'}}>
-      <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'black', color: 'white', padding: '2rem', borderRadius: '8px', maxWidth: '550px', margin: '0rem auto', textAlign: 'left'}}>
+      <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'black', color: 'white', padding: '2rem', borderRadius: '8px', maxWidth: '520px', margin: '0rem auto', textAlign: 'left'}}>
         <Box sx={{alignItems: 'flex-start'}}>
-          <Typography variant='h4' sx={{fontWeight: 'bold'}}>Dealer Inquiry Form</Typography>
-          <Typography variant='h6' sx={{ marginBottom: '1rem', py: 2}}>Let's align our constellations! Reach out and let the magic of collaboration illuminate our skies.</Typography>
+          <Typography variant='h4' sx={{fontWeight: 'bold', fontFamily: '"Poppins", sans-serif'}}>Dealer Inquiry Form</Typography>
+          <Typography variant='h6' sx={{ marginBottom: '1rem', py: 2, fontFamily: '"Poppins", sans-serif', color: 'silver'}}>Let's align our constellations! Reach out and let the magic of collaboration illuminate our skies.</Typography>
         </Box>
         <Box component="form" sx={{display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%'}}>
           <Box sx={{display: 'flex', gap: '1rem'}}>
-            <TextField fullWidth label="First Name" variant='outlined' sx={{borderRadius: '5px', backgroundColor: 'white', '& .MuiInputLabel-root': {color: 'gray'}}}/>
-            <TextField fullWidth label="Last Name" variant='outlined' sx={{borderRadius: '5px', backgroundColor: 'white'}}/>
+            <TextField fullWidth label="First Name" variant='outlined' sx={{borderRadius: '5px', backgroundColor: 'white', '& .MuiInputLabel-root': {color: 'gray'}, "& .MuiInputLabel-root": {fontFamily: "Poppins, sans-serif"}}}/>
+            <TextField fullWidth label="Last Name" variant='outlined' sx={{borderRadius: '5px', backgroundColor: 'white', "& .MuiInputLabel-root": {fontFamily: "Poppins, sans-serif"}}}/>
           </Box>
-            <TextField fullWidth label="Email" variant='outlined' sx={{borderRadius: '5px', backgroundColor: 'white'}}/>
-            <TextField fullWidth label="Phone Number" variant='outlined' sx={{borderRadius: '5px', backgroundColor: 'white'}}/>
-            <TextField fullWidth label="First Name" variant='outlined' sx={{borderRadius: '5px', backgroundColor: 'white'}}/>
-            <TextField fullWidth select label="Business Type" variant='outlined' sx={{borderRadius: '5px', backgroundColor: 'white'}}>
+            <TextField fullWidth label="Email" variant='outlined' sx={{borderRadius: '5px', backgroundColor: 'white', "& .MuiInputLabel-root": {fontFamily: "Poppins, sans-serif"}}}/>
+            <TextField fullWidth label="Phone Number" variant='outlined' sx={{borderRadius: '5px', backgroundColor: 'white', "& .MuiInputLabel-root": {fontFamily: "Poppins, sans-serif"}}}/>
+            {/* <TextField fullWidth label="First Name" variant='outlined' sx={{borderRadius: '5px', backgroundColor: 'white', "& .MuiInputLabel-root": {fontFamily: "Poppins, sans-serif"}}}/> */}
+            <TextField fullWidth select label="Business Type" variant='outlined' sx={{borderRadius: '5px', backgroundColor: 'white', "& .MuiInputLabel-root": {fontFamily: "Poppins, sans-serif"}}}>
               <MenuItem value="Retailer">Retailer</MenuItem>
               <MenuItem value="Distributor">Distributor</MenuItem>
               <MenuItem value="Wholesaler">Wholesaler</MenuItem>

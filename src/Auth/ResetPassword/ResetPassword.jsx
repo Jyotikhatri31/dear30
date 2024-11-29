@@ -1,11 +1,7 @@
 import React from 'react';
-import { Box, Typography, TextField, Button, IconButton, FormControlLabel, Checkbox, Divider } from '@mui/material';
+import { Box, Typography, TextField, Button, IconButton } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import GoogleIcon from '@mui/icons-material/Google';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import AppleIcon from '@mui/icons-material/Apple';
 import { green } from '@mui/material/colors';
-import "./resetpassword.css";
 import { Link } from 'react-router-dom';
 
 function ResetPassword() {
@@ -21,43 +17,25 @@ function ResetPassword() {
       </Box>
 
       {/* Heading */}
-      <Typography variant="h2" fontWeight="bold" mb={3}>
-        Forget Password
-      </Typography>
+      <Typography variant="h2" fontWeight="bold" mb={3} sx={{fontFamily: "Poppins, sans-serif", textAlign: 'center'}}>Forget Password</Typography>
 
-      <Typography variant="h4" fontWeight="bold" mb={3}>
-        Reset Password
-      </Typography>
+      <Typography variant="h4" fontWeight="medium" mb={3} sx={{fontFamily: "Poppins, sans-serif", textAlign: {xs: 'left', md: 'center'}}}>Reset Password</Typography>
 
       {/* Welcome Message */}
-      <Typography variant="h6" fontWeight="medium" mb={1} textAlign="left" width="520px">
-        We have send an otp on your registered email address/mobile number
-      </Typography>
+      <Typography variant="h6" fontWeight="medium" mb={1} color='silver' textAlign="left" maxWidth="520px" sx={{fontFamily: "Poppins, sans-serif"}}>We have send an otp on your registered email address/mobile number</Typography>
 
       {/* Username or Email Field */}
-      <TextField
-        label="Email Address"
-        variant="outlined"
-        fullWidth
-        sx={{ bgcolor: 'white', borderRadius: 1, mb: 2, width: '520px', color: "#4D4D4D"}}
-        InputProps={{ sx: { color: 'black' } }}
-      />
+      <Box display="flex" flexDirection="column" width="100%" maxWidth="520px">
+        <TextField variant="outlined" label="Full Name" InputProps={{ style: { color: "white" },}} sx={{ mb: 2, bgcolor: "black", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: green[500],},"&:hover fieldset": {borderColor: green[500],},},"& .MuiInputLabel-root": {color: "white", fontFamily: "Poppins, sans-serif"},}}/>
+      </Box>
 
       {/* ResetPassword Button */}
       <Link to="/otp">
-      <Button variant="contained" fullWidth
-        sx={{
-          bgcolor: green[500],
-          color: 'white',
-          fontWeight: 'bold',
-          py: 1,
-          borderRadius: 2,
-          fontSize: '1.7rem',
-          mb: 3,
-          textTransform: 'none',
-          width: '520px' 
-        }}>Submit</Button>
+        <Box sx={{ display: 'inline-block', p: '2px', borderRadius: 2, background: 'linear-gradient(90deg, #78FF00 0%, #fff 100%)', mb: 3 }}>
+          <Button variant="contained" sx={{ background: 'linear-gradient(90deg, #599D21 0%, #179B7E 100%)', color: '#fff', fontWeight: 'bold', fontSize: '1.5rem', textTransform: 'none', borderRadius: 2, px: 2, width: {xs:"350px",md:"520px"} }}>Submit</Button>
+        </Box>
       </Link>
+
     </Box>
   );
 }

@@ -24,16 +24,9 @@ function ChangePassword() {
         </Link>
       </Box>
 
-      {/* Heading */}
-      <Typography variant="h2" fontWeight="bold" mb={3}>
-        Reset Password
-      </Typography>
-
-      {/* Subheading */}
-      <Typography variant="h4" fontWeight="medium" mb={1}>
-        Change Password
-      </Typography>
-      <Typography variant="body2" mb={4} textAlign="left" width="520px">
+      <Typography variant="h2" fontWeight="bold" mb={3} sx={{fontFamily: "Poppins, sans-serif"}}>Reset Password</Typography>
+      <Typography variant="h4" fontWeight="medium" textAlign="left" mb={1} sx={{fontFamily: "Poppins, sans-serif"}}>Change Password</Typography>
+      <Typography variant="h6" mb={4} textAlign="left" maxWidth="520px" width="100%"  color="silver" sx={{fontFamily: "Poppins, sans-serif"}} >
         Type your new strong password. Your password must include:
         <ul style={{ marginTop: '8px' }}>
           <li>One capital letter & one small letter at least</li>
@@ -44,13 +37,7 @@ function ChangePassword() {
 
       {/* Password and Confirm Password Fields */}
       <Box display="flex" flexDirection="column" gap={2} mb={4} width="100%" maxWidth="520px">
-        <TextField
-          variant="outlined"
-          type={showPassword ? 'text' : 'password'}
-          label="Password"
-          InputProps={{
-            style: { color: 'white' },
-            endAdornment: (
+        <TextField variant="outlined" type={showPassword ? 'text' : 'password'} label="Password" InputProps={{ style: { color: 'white' }, endAdornment: (
               <InputAdornment position="end">
                 <IconButton onClick={handleTogglePasswordVisibility} edge="end" sx={{ color: 'white' }}>
                   {showPassword ? <VisibilityOff /> : <Visibility />}
@@ -58,20 +45,7 @@ function ChangePassword() {
               </InputAdornment>
             ),
           }}
-          sx={{
-            bgcolor: 'black',
-            '& .MuiOutlinedInput-root': {
-              '& fieldset': {
-                borderColor: green[500],
-              },
-              '&:hover fieldset': {
-                borderColor: green[500],
-              },
-            },
-            '& .MuiInputLabel-root': {
-              color: 'white',
-            },
-          }}
+          sx={{ bgcolor: 'black', '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: green[500],},'&:hover fieldset': {borderColor: green[500],},},'& .MuiInputLabel-root': {color: 'white',fontFamily: "Poppins, sans-serif",},}}
         />
         <TextField
           variant="outlined"
@@ -99,6 +73,7 @@ function ChangePassword() {
             },
             '& .MuiInputLabel-root': {
               color: 'white',
+              fontFamily: "Poppins, sans-serif",
             },
           }}
         />
@@ -106,22 +81,9 @@ function ChangePassword() {
 
       {/* Reset Button */}
       <Link to="/login">
-      <Button
-        variant="contained"
-        fullWidth
-        sx={{
-          bgcolor: green[500],
-          color: 'white',
-          fontWeight: 'bold',
-          py: 1.5,
-          borderRadius: 2,
-          fontSize: '1.2rem',
-          textTransform: 'none',
-          width: '520px',
-        }}
-      >
-        Reset
-      </Button>
+        <Box sx={{ display: 'inline-block', p: '2px', borderRadius: 2, background: 'linear-gradient(90deg, #78FF00 0%, #fff 100%)', mb: 3 }}>
+          <Button variant="contained" sx={{ background: 'linear-gradient(90deg, #599D21 0%, #179B7E 100%)', color: '#fff', fontWeight: 'bold', fontSize: '1.5rem', textTransform: 'none', borderRadius: 2, px: 2, width: {xs:"350px",md:"520px"} }}>Reset</Button>
+        </Box>
       </Link>
     </Box>
   );

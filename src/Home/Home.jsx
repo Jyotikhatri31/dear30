@@ -112,11 +112,11 @@ function Home() {
     <Box>
      <Box className="home-sec">
       <Container maxWidth={false} className='container'>
-        <Box sx={{ position: "relative", zIndex: 1, fontFamily: '"Poppins", sans-serif' }}>
-          <Typography variant="h2" gutterBottom sx={{fontSize: {xs: '3rem', md: '4rem'}, fontWeight: 'bold', paddingTop: {xs: '100px'}}}>
+        <Box sx={{ position: "relative", zIndex: 1 }}>
+          <Typography variant="h2" gutterBottom sx={{fontSize: {xs: '3rem', md: '4rem'}, fontWeight: 'bold', paddingTop: {xs: '100px'}, fontFamily: '"Poppins", sans-serif'}}>
             Explore, Book, Conquer
           </Typography>
-          <Typography variant="h5" gutterBottom>
+          <Typography variant="h5" gutterBottom sx={{fontFamily: '"Poppins", sans-serif'}}>
             Discover premium <span style={{fontWeight: 'bolder'}}>hunting resources</span> and <span style={{fontWeight: 'bolder'}}>top-notch gear</span> effortlessly.
             Your next adventure is just a few clicks away!
           </Typography>
@@ -138,15 +138,15 @@ function Home() {
         <Box sx={{display: 'flex', marginTop: {xs: '10px', md: '40px'}}} className="home-icons">
             <Box className="fav-i" sx={{marginRight:'20px'}}>
                 <Box><HttpsOutlinedIcon sx={{color: '#77F044', marginRight: '10px', fontSize: '1.9rem'}}/></Box>
-                <Typography sx={{fontWeight: 'bold'}}>Protected <br/>Payment Gateway</Typography>
+                <Typography sx={{fontWeight: 'bold', fontFamily: '"Poppins", sans-serif'}}>Protected <br/>Payment Gateway</Typography>
             </Box>
             <Box className="fav-i" sx={{marginRight:'20px'}}>
                 <Box><FavoriteBorderOutlinedIcon sx={{color: '#77F044', marginRight: '10px', fontSize: '1.9rem'}}/></Box>
-                <Typography sx={{fontWeight: 'bold'}}>Easy <br/>to Use Platform</Typography>
+                <Typography sx={{fontWeight: 'bold', fontFamily: '"Poppins", sans-serif'}}>Easy <br/>to Use Platform</Typography>
             </Box>
             <Box className="fav-i">
                 <Box><SpeedIcon sx={{color: '#77F044', marginRight: '10px', fontSize: '1.9rem'}}/></Box>
-                <Typography sx={{fontWeight: 'bold'}}>Fast <br/>Bank Transfers</Typography>
+                <Typography sx={{fontWeight: 'bold', fontFamily: '"Poppins", sans-serif'}}>Fast <br/>Bank Transfers</Typography>
             </Box>
         </Box>
       </Container>
@@ -156,7 +156,7 @@ function Home() {
      <Box className="products-sec section" sx={{backgroundColor: "#000"}}>
         <Container maxWidth={false} className='container'>
           <Box>
-            <Typography variant="h3" sx={{ color: "white", fontWeight: "bold", mb: 4 }}>
+            <Typography variant="h3" sx={{ color: "white", fontWeight: "bold", mb: 4, fontFamily: '"Poppins", sans-serif' }}>
                 <span style={{ marginRight: "10px" }}><GpsFixedIcon sx={{ fontSize: '2.5rem'}}/></span> Our Latest Products
             </Typography>
 
@@ -169,10 +169,10 @@ function Home() {
                             i < 4 ? <StarIcon key={i} /> : <StarBorderIcon key={i} />
                         ))}
                     </Box>
-                    <Typography variant="h6" sx={{ color: "white", fontWeight: "bold" }}>
+                    <Typography variant="h6" sx={{ color: "white", fontWeight: "bold", fontFamily: '"Poppins", sans-serif' }}>
                         {product.title}
                     </Typography>
-                    <Typography variant="body1" sx={{ color: "white" }}>
+                    <Typography variant="body1" sx={{ color: "white", fontFamily: '"Poppins", sans-serif' }}>
                         Regular price ${product.price}
                     </Typography>
                 </Box>
@@ -187,14 +187,14 @@ function Home() {
      <Box className="customer-Sec section" sx={{backgroundColor: "#000"}}>
         <Container maxWidth={false} className='container'>
           <Box>
-            <Typography variant="h3" sx={{ color: "white", fontWeight: "bold", mb: 4 }}>
+            <Typography variant="h3" sx={{ color: "white", fontWeight: "bold", mb: 4, fontFamily: '"Poppins", sans-serif' }}>
                 <span style={{ marginRight: "10px" }}><GpsFixedIcon sx={{ fontSize: '2.5rem'}}/></span> Customers Reviews
             </Typography>
 
             <Slider {...settings} className="customer-reviews-slider">
                 {customers.map((customer, index) => (
                 <Box key={index} sx={{ padding: "30px", textAlign: "center", border: '2px solid #FFFFFF', minHeight: '450px',height: 'auto', width: '400px', borderRadius: '10px', background: 'linear-gradient(135deg, #1c1c1c 0%, #333 100%)', mx: '2' }}>
-                    <Typography variant="h6" sx={{ color: "white" }}>
+                    <Typography variant="h6" sx={{ color: "white",  fontFamily: '"Poppins", sans-serif'  }}>
                       {customer.description}
                     </Typography>
                     <Box display="flex" justifyContent="center" sx={{ color: "#FFDD44", my: 2 }}>
@@ -203,10 +203,10 @@ function Home() {
                         ))}
                     </Box>
                     <Box component="img" src={customer.img} alt={customer.title} sx={{ height: "50px", width: "50px", objectFit: "cover", borderRadius: "50%", marginBottom: "10px", mx: 'auto'}}/>
-                    <Typography variant="h6" sx={{ color: "white", fontWeight: "bold" }}>
+                    <Typography variant="h6" sx={{ color: "white", fontWeight: "bold", fontFamily: '"Poppins", sans-serif'  }}>
                         {customer.name}
                     </Typography>
-                    <Typography variant="body1" sx={{ color: "silver" }}>
+                    <Typography variant="body1" sx={{ color: "silver", fontFamily: '"Poppins", sans-serif'  }}>
                         {customer.title}
                     </Typography>
                 </Box>
@@ -221,7 +221,7 @@ function Home() {
      <Box className="blog-sec section" sx={{backgroundColor: "#000"}}>
         <Container maxWidth={false} className='container'>
           <Box>
-            <Typography variant="h3" sx={{ color: "white", fontWeight: "bold", mb: 4 }}>
+            <Typography variant="h3" sx={{ color: "white", fontWeight: "bold", mb: 4, fontFamily: '"Poppins", sans-serif'}}>
                 <span style={{ marginRight: "10px" }}><GpsFixedIcon sx={{ fontSize: '2.5rem'}}/></span> Latest Blogs
             </Typography>
 
@@ -229,12 +229,12 @@ function Home() {
                 {blogs.map((blog, index) => (
                 <Box key={index} sx={{ padding: "10px", textAlign: "left" }}>
                     <Box component="img" src={blog.img} alt={blog.title} sx={{ height: "200px", width: "100%", borderRadius: "10px", marginBottom: "10px",}}/>
-                    <Typography variant="h6" sx={{ color: "#F3B2D5", backgroundColor: '#381E2C', height: '40px', width: '100%', borderRadius: '5px', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0'}}>News</Typography>
-                    <Typography variant="h5" sx={{ color: "white", fontWeight: '600', margin: '20px 0' }}>Tagline</Typography>
-                    <Typography variant="h6" sx={{ color: "white", fontWeight: "500" }}>
+                    <Typography variant="h6" sx={{ color: "#F3B2D5", backgroundColor: '#381E2C', height: '40px', width: '100%', borderRadius: '5px', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0',  fontFamily: '"Poppins", sans-serif' }}>News</Typography>
+                    <Typography variant="h5" sx={{ color: "white", fontWeight: '600', margin: '20px 0', fontFamily: '"Poppins", sans-serif'  }}>Tagline</Typography>
+                    <Typography variant="h6" sx={{ color: "white", fontWeight: "400",  fontFamily: '"Poppins", sans-serif'  }}>
                         {blog.description}
                     </Typography>
-                    <Typography variant="body1" sx={{ color: "white", display: "flex", alignItems: "center", mt: 2 }}>
+                    <Typography variant="body1" sx={{ color: "white", display: "flex", alignItems: "center", mt: 2, fontFamily: '"Poppins", sans-serif'  }}>
                         <Box component="img" src={blog.img1} alt={blog.title} sx={{ height: "30px", width: "30px", objectFit: "cover", borderRadius: "10px", marginRight: "10px"}}/>
                         {blog.name} <span style={{color: '#96969E', marginLeft: '10px'}}>{blog.date}</span>
                     </Typography>

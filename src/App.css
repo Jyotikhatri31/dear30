@@ -36,10 +36,6 @@ body {
   color: var(--text-color);
 }
 
-box{
-  font-family: "Poppins", sans-serif!important;
-}
-
 .section{
   padding: 80px 0;
 }
@@ -58,7 +54,11 @@ box{
   text-decoration: none;
 }
 
-
+/*--------------- Auth--------------- */
+.log-button{
+  font-weight: bold;
+  color: #fff;
+}
 /*------------- Navbar--------------- */
 .css-s242ks-MuiButtonBase-root-MuiButton-root{
   text-transform:initial!important;
