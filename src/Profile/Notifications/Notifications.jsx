@@ -34,7 +34,7 @@ function Notifications() {
         
         {/* Profile Title */}
         <Box sx={{display: {sm: 'block',md:'flex'}, flexDirection: {sm: 'column', md: 'row'}, justifyContent: 'space-between'}}>
-          <Typography variant="h3" sx={{ color: '#fff', mb: 3 }}>My Profile</Typography>
+          <Typography variant="h3" sx={{ color: '#fff', mb: 3, fontFamily: '"Poppins", sans-serif'  }}>My Profile</Typography>
           <Box sx={{ display: 'flex', alignItems: 'center', border: '2px solid #00FF00', borderRadius: '10px', padding: '0px 10px', backgroundColor: '#000', width: '100%', maxWidth: '450px', height: '55px', color: '#fff',  marginBottom: {xs: 3}}}>
             <InputBase placeholder="Search notifications" sx={{ color: '#FFFFFF', flex: 1, paddingLeft: '8px', fontSize: '1.2rem', color: '#fff'}}/>
             <IconButton type="submit" sx={{ padding: '10px', color: '#FFFFFF' }}>
@@ -108,7 +108,7 @@ function Notifications() {
           {address.map((item) => (
             <Box key={item.id} onClick={() => handleItemClick(item.id)} sx={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#000', mb: 2, color: clickedItems[item.id] ? '#fff' : '#aaa', border: `1px solid ${clickedItems[item.id] ? '#fff': '#aaa'}`, cursor: 'pointer'}}>
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flex: 1, p: 1}}>
-                <Typography variant='h6' fontWeight={'bold'}>
+                <Typography variant='h6' fontWeight={'bold'} sx={{ fontFamily: '"Poppins", sans-serif' }}>
                   {item.description}{!clickedItems[item.id] && (<span style={{height: '15px', width: '15px', borderRadius: '50%', backgroundColor: '#5FEF45', display: 'inline-block', marginLeft: '5px'}}></span>)}</Typography>
               </Box>
             </Box>

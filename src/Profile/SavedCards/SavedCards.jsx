@@ -134,8 +134,8 @@ function SavedCards() {
                 </Box>
                 {/* <img src={item.img} alt="Card"/> */}
                 <Box component="img" src={item.img} alt={item.card} sx={{objectFit: "cover", marginTop: {xs: '20px', md: '0px'}}}/>
-                <Typography variant='h6' fontWeight={'bold'}>{item.card}</Typography>
-                <Typography variant="h6" sx={{ color: '#9B9999'}}>{item.cardNo}</Typography>
+                <Typography variant='h6' fontWeight={'bold'}  fontFamily= '"Poppins", sans-serif' >{item.card}</Typography>
+                <Typography variant="h6" sx={{ color: '#9B9999'}}  fontFamily= '"Poppins", sans-serif' >{item.cardNo}</Typography>
                 <Button sx={{ textTransform: 'none', color: '#000', mr: 2, textDecoration: 'underline', fontSize: '1.1rem'}}>Edit Card</Button>
               </Box>
               {/* Action Buttons */}

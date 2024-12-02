@@ -123,8 +123,8 @@ function MyOrders() {
                     <Box component="img" src={order.img} alt={order.title} sx={{ height: "90px", width: "80px", objectFit: "cover", borderRadius: "2px", marginBottom: "10px",}}/>
                   </Box>
                   <Box sx={{marginLeft: {xs: '0px', md: '20px'}}}>
-                    <Typography variant="h6" sx={{fontWeight: 'bold', mb: '15px'}}>{order.title}</Typography>
-                    <Typography variant="body3">Qty: {order.quantity}</Typography>
+                    <Typography variant="h6" sx={{fontWeight: 'bold', mb: '15px'}} fontFamily= '"Poppins", sans-serif'>{order.title}</Typography>
+                    <Typography variant="body3" >Qty: {order.quantity}</Typography>
                   </Box>
                 </Box>
                 <Box sx={{display: 'flex', color: '#fff', marginTop: {xs: '10px', md: '0px'}}}>

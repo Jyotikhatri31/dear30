@@ -128,7 +128,7 @@ function ManageAddress() {
                 <Box sx={{ width: 25, height: 25, borderRadius: '50%', border: '3px solid #00FF00', display: 'flex', alignItems: 'center', justifyContent: 'center', mr: 2,}}>
                   <Box sx={{ width: 15, height: 15, backgroundColor: item.id === 1 ? '#00FF00' : 'transparent', borderRadius: '50%',}}/>
                 </Box>
-                <Typography variant='h6' fontWeight={'bold'} sx={{marginTop: {xs: '20px', md: '0px'}}}>{item.name}</Typography>
+                <Typography variant='h6' fontWeight={'bold'} sx={{marginTop: {xs: '20px', md: '0px'}}} fontFamily= '"Poppins", sans-serif' >{item.name}</Typography>
                 <Typography variant='h6' fontWeight={'bold'}>{item.address}</Typography>
                 <Typography variant="h6" sx={{ color: '#9B9999'}}>{item.number}</Typography>
                 <Button sx={{ textTransform: 'none', color: '#000', mr: 2, textDecoration: 'underline', fontSize: '1.1rem'}}>Edit Address</Button>
