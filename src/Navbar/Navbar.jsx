@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
 
+  const isLoggedIn = sessionStorage.getItem('isLoggedIn');
   const[drawerOpen, setDrawerOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -100,9 +101,9 @@ function Navbar() {
                   </IconButton>
                 </Link>
 
-                <Link to="/navigationuser">
+                <Link to={ isLoggedIn ? "/contactus" : "/navigationuser"}>
                   <Box sx={{ display: 'inline-block', p: '2px', borderRadius: 2, background: 'linear-gradient(90deg, #78FF00 0%, #fff 100%)' }}>
-                    <Button variant="contained" sx={{ background: 'linear-gradient(90deg, #599D21 0%, #179B7E 100%)', color: '#fff', fontWeight: 'bold', fontSize: '1.2rem', textTransform: 'none', borderRadius: 2, px: 3 }}>Log In</Button>
+                    <Button variant="contained" sx={{ background: 'linear-gradient(90deg, #599D21 0%, #179B7E 100%)', color: '#fff', fontWeight: 'bold', fontSize: '1.2rem', textTransform: 'none', borderRadius: 2, px: 3 }}>{isLoggedIn? "Contact Us" : "Log In"}</Button>
                   </Box>
                 </Link>
               </Box>
