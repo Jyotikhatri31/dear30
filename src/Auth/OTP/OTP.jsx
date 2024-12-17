@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Typography, TextField, Button, IconButton } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { green } from '@mui/material/colors';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { toast } from 'react-toastify';
 
@@ -11,6 +11,8 @@ function OTP() {
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
+  const email = location.state?.email;
 
   const handleOtpChange = (index, value) => {
     const newOtp = [...otp];
@@ -27,11 +29,11 @@ function OTP() {
     e.preventDefault();
     const otpValue = otp.join('');
     try {
-      const response = await axios.post('http://44.196.64.110:9876/user/verifyOtp', { otp: otpValue });
+      const response = await axios.post('http://44.196.64.110:9876/user/verifyOtp', { email: email, otp: otpValue });
       if (response.data.success) {
         toast.success("Your OTP is verified.");
         localStorage.setItem('token', response.data.token);
-        navigate("/changepassword");
+        navigate("/changepassword", {state: {email} });
       } else {
         setMessage('');
         setError(response.data.message || 'Failed to verify OTP');

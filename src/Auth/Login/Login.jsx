@@ -28,7 +28,7 @@ function Login() {
 
   const handleGoogleLogin = () => {
     signInWithPopup(auth, provider1).then((data) => {
-      // console.log(data);
+      sessionStorage.setItem('Token', data.user.accessToken);
       setEmail(data.user.email);
       // localStorage.setItem("googleEmail", data.user.email);
       sessionStorage.setItem('isLoggedIn', true);
@@ -43,7 +43,7 @@ function Login() {
 
   const handleFacebookLogin = () => {
     signInWithPopup(auth, provider2).then((data) => {
-      // console.log(data);
+      sessionStorage.setItem('Token', data.user.accessToken);
       setEmail1(data.user);
       // localStorage.setItem("facebookEmail", data.user);
       sessionStorage.setItem('isLoggedIn', true);
@@ -55,6 +55,7 @@ function Login() {
 
   const handleAppleLogin = () => {
     signInWithPopup(auth, provider3).then((data) =>{
+      sessionStorage.setItem('Token', data.user.accessToken);
       setEmail2(data.user.email);
       sessionStorage.setItem('isLoggedIn', true);
       navigate("/");
@@ -89,6 +90,7 @@ function Login() {
       const response = axios.post("http://44.196.64.110:9876/user/login", formData);
       if((await response).data.success){
         const { token } = (await response).data;
+        // console.log(token);
         sessionStorage.setItem('Token', token);
         sessionStorage.setItem('userId', response.data?.data?.id);
         sessionStorage.setItem('isLoggedIn', true);

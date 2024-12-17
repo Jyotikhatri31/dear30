@@ -53,7 +53,7 @@ function ContactUs() {
       
       <Box sx={{background: 'linear-gradient(90deg, #5FEF45 0%, #51B175 100%)', py: 5}}> 
         <Container maxWidth={false} className='container center-content' sx={{flexDirection: 'column'}}>
-          <Typography variant='h3' sx={{color: '#fff', fontWeight: 'bold', textAlign: 'center', fontFamily: '"Poppins", sans-serif'}}>Ready to get started?</Typography>
+          <Typography variant='h3' sx={{color: '#fff', fontWeight: 'bold', textAlign: 'center', fontFamily: '"Poppins", sans-serif', fontSize: {xs: '2.5rem', md: '3rem'}}}>Ready to get started?</Typography>
           <Typography variant='h4' sx={{my: 2, textAlign: 'center', fontFamily: '"Poppins", sans-serif'}}>Talk to us today</Typography>
           <Box sx={{display: {xs: 'block', md: 'flex'}, flexDirection: {xs: 'column', md: 'row'}, textAlign: 'center'}}>
             <Link to="/products"><Button variant='contained' sx={{ flex: 1, mr: {md: 2}, textTransform: 'initial', fontSize: '1.3rem', fontWeight: 'bold', px: {md: 16}, color: '#57CA61', backgroundColor: '#fff', mb: {xs: 2}, width: {xs: '100%'}}}>Shop Now</Button></Link>

@@ -4,7 +4,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { green } from '@mui/material/colors';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 function ChangePassword() {
@@ -17,6 +17,8 @@ function ChangePassword() {
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
+  const email = location.state?.email;
 
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$/;
 
@@ -35,8 +37,9 @@ function ChangePassword() {
 
     try{
       const token = localStorage.getItem('token');
-      const response = await axios.post("http://44.196.64.110:9876/user/changePassword", { token, newPassword });
-      if(response.data.success){
+      const response = await axios.post("http://44.196.64.110:9876/user/resetPassword", { email: email, password: newPassword });
+      // console.log("Hello "+response);
+      if(response){
         setMessage('Password reset successfully! You can now log in.');
         setError('');
         setTimeout(() => navigate('/login'), 2000);

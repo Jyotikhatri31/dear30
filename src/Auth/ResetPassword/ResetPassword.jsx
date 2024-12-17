@@ -18,11 +18,10 @@ function ResetPassword() {
 
     try{
       const response = await axios.post("http://44.196.64.110:9876/user/forgetPassword", {email});
-      if(response.data.success){
-        // setMessage("OTP sent successfully! Check your email.");
+      if(response.data.message){
         toast.success("OTP sent successfully! Check your email.");
         setError('');
-        setTimeout(() => navigate('/otp'), 2000);
+        setTimeout(() => navigate('/otp', {state: {email} }), 2000);
       }else{
         setMessage('');
         setError(response.data.message || 'Failed to send the OTP');
@@ -38,9 +37,9 @@ function ResetPassword() {
       <ToastContainer/>
       <Box position="absolute" top={16} left={16}>
         <Link to="/login">
-        <IconButton sx={{ color: green[500] }}>
-          <ArrowBackIcon fontSize="large" />
-        </IconButton>
+          <IconButton sx={{ color: green[500] }}>
+            <ArrowBackIcon fontSize="large" />
+          </IconButton>
         </Link>
       </Box>
 

@@ -28,6 +28,8 @@ function SignUp() {
   const [value, setEmail] = useState('');
   const [value1, setEmail1] = useState('');
   const [value2, setEmail2] = useState('');
+  const user = sessionStorage.getItem("User");
+  console.log(user);
 
   const handleGoogleLogin = () => {
     signInWithPopup(auth, provider1).then((data) => {
@@ -90,7 +92,7 @@ function SignUp() {
             fullName: formData.fullName,
             email: formData.email,
             password: formData.password,
-            userType: "Customer"
+            userType: user
           }
         );
         toast.success(response?.data?.message || "User registered successfully!", {
