@@ -83,7 +83,7 @@ function Navbar() {
                   <Link to="/"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Home</Button></Link>
                   <Link to="/products"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Products</Button></Link>
                   <Link to="/service"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Services</Button></Link>
-                  { user === "Customer" && <Link to="/dealers"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Dealers</Button></Link> }
+                  { user !== "Vendor" && (<Link to="/dealers"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>Dealers</Button></Link> )}
                   <Link to="/aboutus"><Button sx={{ color: 'white', fontSize: '1.2rem', marginRight: 4 }}>About Us</Button></Link>
                 </Box>
               </Box>

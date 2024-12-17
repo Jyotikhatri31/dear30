@@ -108,6 +108,7 @@ function Home() {
     ]
   };
   const user = sessionStorage.getItem("User");
+  const token = sessionStorage.getItem("Token");
       
   return (
     <Box>
@@ -126,12 +127,19 @@ function Home() {
               Book Now!
             </Button>
           </Link>
-          
+          {(user == "Vendor" && token) ? (
+          <Link to="/personalinfo">
+            <Button variant="outlined" color="secondary" sx={{ margin: '20px 20px 0 0', color: '#fff', backgroundColor: 'none', border: 'none', fontSize: {xs: '1.4rem', md:'1.6rem'},  fontWeight: 'bold', textTransform: 'initial'}}>
+              Go To Dashboard <KeyboardArrowRightOutlinedIcon sx={{fontSize: {xs: '2.2rem', md: '2.5rem'}}}/>
+            </Button>
+          </Link>
+          ) : (
           <Link to="/enquiryform">
             <Button variant="outlined" color="secondary" sx={{ margin: '20px 20px 0 0', color: '#fff', backgroundColor: 'none', border: 'none', fontSize: {xs: '1.4rem', md:'1.6rem'},  fontWeight: 'bold', textTransform: 'initial'}}>
               Dealers Inquiry <KeyboardArrowRightOutlinedIcon sx={{fontSize: {xs: '2.2rem', md: '2.5rem'}}}/>
             </Button>
           </Link>
+          )}
           <Box>
 
           </Box>

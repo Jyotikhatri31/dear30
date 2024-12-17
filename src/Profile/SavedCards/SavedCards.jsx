@@ -119,7 +119,7 @@ function SavedCards() {
                   </ListItem>
                 </Link>
 
-                <Link to="/login" className='link-c' onClick={handleLogout}>
+                <Link to="/navigationuser" className='link-c' onClick={handleLogout}>
                   <ListItem button sx={{my: 1, '&:hover':{backgroundColor: '#5FEF45'}}}>
                     <ListItemIcon><ExitToApp sx={{ color: '#000' }} /></ListItemIcon>
                     <ListItemText primary="Log Out" primaryTypographyProps={{ sx: { color: '#000', fontSize: '1.1rem' } }}/>
